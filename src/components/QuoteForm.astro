@@ -1,0 +1,50 @@
+---
+import { site } from '../data/site';
+---
+<div class="rounded-2xl bg-slate-900 p-8 text-white md:p-12">
+  <h2 class="text-3xl font-bold tracking-tight">Minta Penawaran Resmi</h2>
+  <p class="mt-2 max-w-xl text-slate-300">
+    Isi kebutuhan — tombol akan membuka WhatsApp dengan pesan terisi otomatis. Tanpa server, tanpa spam.
+  </p>
+  <form id="quote-form" class="mt-6 grid gap-4 md:grid-cols-2">
+    <label class="grid gap-1 text-sm">
+      Nama / Instansi
+      <input
+        name="name" required placeholder="RS Contoh — Budi"
+        class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
+      />
+    </label>
+    <label class="grid gap-1 text-sm">
+      Kebutuhan produk
+      <input
+        name="need" required placeholder="cth: 100 box Sterile Gauze"
+        class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
+      />
+    </label>
+    <div class="flex flex-col gap-3 sm:flex-row md:col-span-2">
+      <button
+        type="submit"
+        class="min-h-[44px] flex-1 rounded-lg bg-green-500 px-6 py-3 font-bold text-white transition hover:bg-green-600 active:scale-[0.98]"
+      >
+        Kirim via WhatsApp
+      </button>
+      <a
+        href={`mailto:${site.email}`}
+        class="min-h-[44px] inline-flex flex-1 items-center justify-center rounded-lg border border-white/30 px-6 py-3 font-semibold transition hover:bg-white/10"
+      >
+        {site.email}
+      </a>
+    </div>
+  </form>
+  <p class="mt-4 text-sm text-slate-400">Fast response: {site.phoneDisplay}</p>
+</div>
+
+<script define:vars={{ waNumber: site.waNumber }}>
+  const form = document.getElementById('quote-form');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const msg = `Halo Galamed, saya ${data.get('name')}. Kebutuhan: ${data.get('need')}`;
+    window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+  });
+</script>

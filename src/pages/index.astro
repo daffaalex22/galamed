@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ProductCard from '../components/ProductCard.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { site } from '../data/site';
+import { products } from '../data/products';
+
+const categories = ['Semua', ...new Set(products.map((p) => p.category))];
+---
+
+<BaseLayout>
+  <header id="home" class="bg-gradient-to-b from-brand-50 to-white">
+    <div class="mx-auto max-w-6xl px-6 py-16 text-center md:py-20">
+      <img
+        src="/legacy/ss-galamed.webp"
+        alt="Galamed — Advancing Healthcare, Improving Lives"
+        width="803"
+        height="222"
+        fetchpriority="high"
+        class="mx-auto h-20 w-auto rounded-xl bg-white object-contain px-6 py-2 shadow-sm md:h-24"
+      />
+      <span class="mt-6 inline-block rounded-full bg-brand-100 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-brand-800">
+        {site.tagline}
+      </span>
+      <h1 class="mx-auto mt-6 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-navy-800 md:text-5xl">
+        Solusi Alat Kesehatan Premium & Terpercaya
+      </h1>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+        Berkomitmen menghadirkan produk medis berkualitas tinggi untuk mendukung pelayanan
+        kesehatan prima di seluruh instansi medis.
+      </p>
+      <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+        <a
+          href="#products"
+          class="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-brand-700 px-6 py-3 font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-md"
+        >
+          Lihat Produk
+        </a>
+        <a
+          href={site.waLink}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex min-h-[44px] items-center justify-center rounded-lg border-2 border-brand-700 px-6 py-3 font-semibold text-brand-700 transition hover:bg-brand-50"
+        >
+          WhatsApp Kami
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl space-y-20 px-6 py-16">
+    <section id="about" class="scroll-mt-24">
+      <div class="grid items-center gap-8 md:grid-cols-[1fr_320px]">
+        <div>
+          <SectionHeading eyebrow="Profil Perusahaan" title={site.company} desc="Sebagai distributor profesional alat kesehatan resmi, kami menghadirkan rangkaian produk premium dengan standar klinis internasional yang ketat." />
+          <ul class="mt-6 grid gap-3 sm:grid-cols-3">
+            <li class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"><strong>✓</strong> Kualitas Medis Premium</li>
+            <li class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"><strong>✓</strong> Distribusi Resmi & Legal</li>
+            <li class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"><strong>✓</strong> Dukungan Layanan Profesional</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
+          <img src="/legacy/logo-gph.webp" alt="PT Galunggung Perkasa Husada logo" width="637" height="622" class="mx-auto h-40 w-40 rounded-full object-cover" loading="lazy" />
+          <p class="mt-4 text-sm font-semibold text-navy-800">{site.company}</p>
+          <p class="text-xs text-slate-500">Logo korporat asli dari situs lama</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="scroll-mt-24">
+      <SectionHeading eyebrow="Katalog Resmi" title="Produk Utama Kami" desc="Cari atau filter berdasarkan kategori. Data dari src/data/products.ts — siap pindah ke Decap CMS Phase 2." />
+      <div class="mt-6 flex flex-col gap-3 md:flex-row md:items-center">
+        <input
+          id="product-search"
+          type="search"
+          placeholder="Cari produk… (cth: kasa, masker)"
+          class="min-h-[44px] w-full rounded-lg border border-slate-300 px-4 py-2 text-[15px] focus:border-brand-500 focus:outline-none md:max-w-sm"
+        />
+        <div id="product-filters" class="flex flex-wrap gap-2">
+          {categories.map((c, i) => (
+            <button
+              data-cat={c}
+              class={`min-h-[44px] rounded-full border px-4 py-2 text-sm font-semibold transition ${i === 0 ? 'border-brand-700 bg-brand-700 text-white' : 'border-slate-300 text-navy-800 hover:border-brand-700 hover:text-brand-700'}`}
+            >
+              {c}
+            </button>
+          ))}
+        </div>
+      </div>
+      <p id="product-count" class="mt-3 text-sm text-slate-500" aria-live="polite"></p>
+      <div id="product-grid" class="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {products.map((p) => (
+          <div data-name={p.name.toLowerCase()} data-cat={p.category}>
+            <ProductCard product={p} />
+          </div>
+        ))}
+      </div>
+      <p id="product-empty" class="hidden rounded-xl border border-dashed p-6 text-center text-slate-500">
+        Tidak ada produk yang cocok. Coba kata kunci lain atau hubungi kami via WhatsApp.
+      </p>
+    </section>
+
+    <section id="layanan" class="scroll-mt-24">
+      <SectionHeading eyebrow="Layanan Pengadaan" title="Cara Order untuk Instansi Medis" />
+      <ol class="mt-6 grid gap-4 md:grid-cols-4">
+        <li class="rounded-xl border p-5"><strong>1. Konsultasi</strong><br /><span class="text-sm text-slate-600">Chat WA / email kebutuhan.</span></li>
+        <li class="rounded-xl border p-5"><strong>2. Penawaran</strong><br /><span class="text-sm text-slate-600">Quotation resmi cepat.</span></li>
+        <li class="rounded-xl border p-5"><strong>3. Pengiriman</strong><br /><span class="text-sm text-slate-600">Distribusi aman & terdokumentasi.</span></li>
+        <li class="rounded-xl border p-5"><strong>4. After-sales</strong><br /><span class="text-sm text-slate-600">Dukungan produk profesional.</span></li>
+      </ol>
+    </section>
+
+    <section id="artikel" class="scroll-mt-24">
+      <SectionHeading eyebrow="Edukasi" title="Artikel Kesehatan" desc="Placeholder SEO — isi 3 artikel awal setelah launch." />
+      <div class="mt-6 grid gap-6 md:grid-cols-3">
+        <article class="rounded-2xl border p-6 transition hover:shadow-md">Cara memilih kasa steril untuk bedah</article>
+        <article class="rounded-2xl border p-6 transition hover:shadow-md">SOP antiseptik sebelum injeksi</article>
+        <article class="rounded-2xl border p-6 transition hover:shadow-md">Checklist pengadaan consumables RS</article>
+      </div>
+    </section>
+
+    <section id="contact" class="scroll-mt-24">
+      <QuoteForm waLink={site.waLink} />
+    </section>
+  </main>
+</BaseLayout>
+
+<script>
+  const search = document.getElementById('product-search');
+  const buttons = [...document.querySelectorAll('#product-filters button')];
+  const cards = [...document.querySelectorAll('#product-grid > div')];
+  const count = document.getElementById('product-count');
+  const empty = document.getElementById('product-empty');
+  let activeCat = 'Semua';
+
+  function apply() {
+    const q = (search?.value ?? '').toLowerCase().trim();
+    let shown = 0;
+    cards.forEach((el) => {
+      const matchCat = activeCat === 'Semua' || el.dataset.cat === activeCat;
+      const matchQ = !q || el.dataset.name?.includes(q);
+      const show = matchCat && matchQ;
+      el.classList.toggle('hidden', !show);
+      if (show) shown++;
+    });
+    if (count) count.textContent = `${shown} dari ${cards.length} produk`;
+    empty?.classList.toggle('hidden', shown > 0);
+  }
+
+  buttons.forEach((b) =>
+    b.addEventListener('click', () => {
+      activeCat = b.dataset.cat ?? 'Semua';
+      buttons.forEach((x) => {
+        const on = x === b;
+        x.className = `min-h-[44px] rounded-full border px-4 py-2 text-sm font-semibold transition ${on ? 'border-brand-700 bg-brand-700 text-white' : 'border-slate-300 text-navy-800 hover:border-brand-700 hover:text-brand-700'}`;
+      });
+      apply();
+    })
+  );
+  search?.addEventListener('input', apply);
+  apply();
+</script>

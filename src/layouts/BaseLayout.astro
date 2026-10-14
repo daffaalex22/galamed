@@ -1,0 +1,72 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import { site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'Galamed — Distributor Alat Kesehatan Premium | PT Galunggung Perkasa Husada',
+  description = 'PT Galunggung Perkasa Husada (Galamed) — distributor alat kesehatan premium: kasa steril, kasa lipat, dan consumables klinis standar internasional. Minta penawaran via WhatsApp.',
+} = Astro.props;
+const canonical = 'https://galamed.id/';
+const ogImage = 'https://galamed.id/legacy/ss-galamed.webp';
+---
+
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#101b4d" />
+
+    <!-- Open Graph: pretty preview when shared on WhatsApp / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="Galamed" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Search Console: paste your verification code here after creating the property.
+         Search Console → Settings → Verification → HTML tag → copy content="..." value. -->
+    <!-- <meta name="google-site-verification" content="PASTE_CODE_HERE" /> -->
+
+    <!-- GA4: replace G-XXXXXXX with your Measurement ID (Admin → Data Streams), then uncomment.
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX');
+    </script>
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/legacy/SS%20Galamed.png" />
+  </head>
+  <body class="bg-white text-slate-900 antialiased">
+    <Navbar brand={site.brand} waLink={site.waLink} />
+    <slot />
+    <footer class="border-t border-slate-100 bg-navy-900 text-slate-300">
+      <div class="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-8 text-sm md:flex-row md:items-center md:justify-between">
+        <span>© {new Date().getFullYear()} {site.company} — {site.brand}</span>
+        <span>{site.email} · {site.phoneDisplay}</span>
+      </div>
+    </footer>
+    <WhatsAppFloat waLink={site.waLink} />
+  </body>
+</html>

@@ -1,0 +1,31 @@
+---
+import type { Product } from '../data/products';
+interface Props {
+  product: Product;
+}
+const { product } = Astro.props;
+---
+<article
+  class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+>
+  <div class="relative h-40 overflow-hidden bg-brand-50">
+    <img
+      src="/legacy/sterile.webp"
+      alt={product.name}
+      loading="lazy"
+      width="700"
+      height="700"
+      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+    <span class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-brand-800 shadow-sm backdrop-blur">
+      {product.category}
+    </span>
+  </div>
+  <div class="space-y-2 p-5">
+    <h3 class="font-semibold leading-snug text-navy-800 transition-colors group-hover:text-brand-700">
+      {product.name}
+    </h3>
+    <p class="text-sm leading-relaxed text-slate-600">{product.desc}</p>
+    <p class="pt-1 text-xs text-slate-400">Image placeholder — ganti di Phase 2 CMS</p>
+  </div>
+</article>
