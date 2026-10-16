@@ -7,6 +7,16 @@
     <title>Galamed CMS</title>
   </head>
   <body>
+    <script>
+      // Decap resolves config.yml relative to the page URL, so /admin
+      // (no trailing slash) would wrongly fetch /config.yml → 404.
+      // Normalize to /admin/ before the CMS boots.
+      if (!window.location.pathname.endsWith('/')) {
+        window.location.replace(
+          window.location.pathname + '/' + window.location.search + window.location.hash
+        );
+      }
+    </script>
     <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
   </body>
 </html>
