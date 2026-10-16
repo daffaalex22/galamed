@@ -1,5 +1,11 @@
 ---
-import type { Product } from '../data/products';
+interface Product {
+  name: string;
+  short: string;
+  desc: string;
+  category: string;
+  image: string;
+}
 interface Props {
   product: Product;
 }
@@ -10,7 +16,7 @@ const { product } = Astro.props;
 >
   <div class="relative h-40 overflow-hidden bg-brand-50">
     <img
-      src="/legacy/sterile.webp"
+      src={product.image}
       alt={product.name}
       loading="lazy"
       width="700"
@@ -26,6 +32,5 @@ const { product } = Astro.props;
       {product.name}
     </h3>
     <p class="text-sm leading-relaxed text-slate-600">{product.desc}</p>
-    <p class="pt-1 text-xs text-slate-400">Image placeholder — ganti di Phase 2 CMS</p>
   </div>
 </article>

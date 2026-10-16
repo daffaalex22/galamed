@@ -4,7 +4,10 @@ import SectionHeading from '../components/SectionHeading.astro';
 import ProductCard from '../components/ProductCard.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import { site } from '../data/site';
-import { products } from '../data/products';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('products');
+const products = [...entries].sort((a, b) => a.id.localeCompare(b.id)).map((e) => e.data);
 
 const categories = ['Semua', ...new Set(products.map((p) => p.category))];
 ---
@@ -69,7 +72,7 @@ const categories = ['Semua', ...new Set(products.map((p) => p.category))];
     </section>
 
     <section id="products" class="scroll-mt-24">
-      <SectionHeading eyebrow="Katalog Resmi" title="Produk Utama Kami" desc="Cari atau filter berdasarkan kategori. Data dari src/data/products.ts — siap pindah ke Decap CMS Phase 2." />
+      <SectionHeading eyebrow="Katalog Resmi" title="Produk Utama Kami" desc="Cari atau filter berdasarkan kategori. Dikelola via /admin — publish otomatis tayang ±2 menit." />
       <div class="mt-6 flex flex-col gap-3 md:flex-row md:items-center">
         <input
           id="product-search"

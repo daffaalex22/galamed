@@ -1,0 +1,59 @@
+# Galamed CMS — diedit via https://galamed.vercel.app/admin
+# Login = akun GitHub (butuh akses Write ke repo, lihat CMS_GUIDE.md).
+# local_backend dipakai saat development lokal (jalankan `npm run cms`).
+
+local_backend: true
+
+backend:
+  name: github
+  repo: daffaalex22/galamed
+  branch: main
+  # OAuth proxy hidup di domain production yang sama (api/auth + api/callback).
+  base_url: https://galamed.vercel.app
+  auth_endpoint: api/auth
+
+# Foto produk yang diupload masuk ke public/images/products.
+media_folder: public/images/products
+public_folder: /images/products
+
+collections:
+  - name: products
+    label: Produk
+    label_singular: Produk
+    folder: src/content/products
+    create: true
+    # Nama file = slug. JANGAN rename file produk yang sudah ada.
+    slug: '{{slug}}'
+    identifier_field: name
+    summary: '{{fields.name}} ({{fields.category}})'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Nama Produk', name: name, widget: string, hint: 'cth: Sterile Gauze (Kasa Steril)' }
+      - { label: 'Ringkasan Pendek', name: short, widget: string, hint: '1 baris, tampil di kartu produk' }
+      - { label: 'Deskripsi', name: desc, widget: text, hint: '1-2 kalimat untuk kartu produk' }
+      - label: 'Kategori'
+        name: category
+        widget: select
+        options:
+          - 'Kasa & Luka'
+          - 'Kebersihan & Antiseptik'
+          - 'Proteksi'
+          - 'Pendukung Klinis'
+      - { label: 'Foto Produk', name: image, widget: image, hint: 'Otomatis tersimpan di /images/products. JPG/PNG/WebP.' }
+
+  - name: settings
+    label: Pengaturan Situs
+    files:
+      - name: site
+        label: Kontak & Info
+        file: src/data/site.json
+        editor:
+          preview: false
+        fields:
+          - { label: 'Nama Perusahaan', name: company, widget: string }
+          - { label: 'Nama Brand', name: brand, widget: string }
+          - { label: 'Tagline', name: tagline, widget: string }
+          - { label: 'Email', name: email, widget: string, hint: 'cth: refa@galamed.id' }
+          - { label: 'No. WA Tampil', name: phoneDisplay, widget: string, hint: 'cth: +62 823-1582-2926' }
+          - { label: 'No. WA Sistem', name: waNumber, widget: string, hint: 'PENTING: angka saja diawali 62, tanpa +, spasi, strip. cth: 6282315822926' }

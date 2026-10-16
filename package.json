@@ -5,11 +5,16 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "cms": "decap-server"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.0",
     "astro": "^5.13.0",
-    "tailwindcss": "^4.1.0",
-    "@tailwindcss/vite": "^4.1.0"
+    "netlify-cms-oauth-provider-node": "^2.0.0",
+    "tailwindcss": "^4.1.0"
+  },
+  "devDependencies": {
+    "decap-server": "^3.11.5"
   }
 }
