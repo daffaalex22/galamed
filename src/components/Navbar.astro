@@ -4,17 +4,11 @@ interface Props {
   waLink: string;
 }
 const { brand, waLink } = Astro.props;
-const splitAt = brand.toUpperCase().indexOf('MED');
-const head = splitAt > 0 ? brand.slice(0, splitAt) : brand;
-const tail = splitAt > 0 ? brand.slice(splitAt) : '';
 ---
 <nav class="sticky top-0 z-50 border-b border-slate-100 bg-white/90 backdrop-blur">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
-    <a href="#home" class="flex items-center gap-3" aria-label={brand}>
+    <a href="#home" class="flex items-center" aria-label={brand}>
       <img src="/legacy/ss-galamed.webp" alt="Galamed logo" width="803" height="222" class="h-9 w-auto rounded bg-white object-contain" loading="eager" fetchpriority="high" />
-      <span class="hidden text-xl font-extrabold tracking-tight sm:inline">
-        <span class="text-navy-800">{head}</span><span class="text-brand-700">{tail}</span>
-      </span>
     </a>
     <div class="hidden gap-6 text-sm font-medium text-navy-800 lg:flex">
       <a href="#home" class="rounded px-1 py-2 transition hover:text-brand-700">Home</a>
@@ -29,9 +23,10 @@ const tail = splitAt > 0 ? brand.slice(splitAt) : '';
         href={waLink}
         target="_blank"
         rel="noopener"
-        class="inline-flex min-h-[44px] items-center rounded-lg bg-brand-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-md active:translate-y-0"
+        class="inline-flex min-h-[44px] shrink-0 items-center whitespace-nowrap rounded-lg bg-brand-700 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-md active:translate-y-0 sm:px-4"
       >
-        Minta Penawaran
+        <span class="sm:hidden">Penawaran</span>
+        <span class="hidden sm:inline">Minta Penawaran</span>
       </a>
       <button
         id="nav-toggle"
