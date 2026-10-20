@@ -14,6 +14,36 @@ const {
 } = Astro.props;
 const canonical = 'https://galamed.id/';
 const ogImage = 'https://galamed.id/legacy/ss-galamed.webp';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.company,
+  alternateName: site.brand,
+  url: canonical,
+  logo: ogImage,
+  email: site.email,
+  telephone: `+${site.waNumber}`,
+  description: 'Distributor konsumabel medis resmi: kasa steril, kapas, dan perawatan luka.',
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      telephone: `+${site.waNumber}`,
+      email: site.email,
+      availableLanguage: 'id',
+    },
+  ],
+  ...(site.address
+    ? {
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: site.address,
+          addressCountry: 'ID',
+        },
+      }
+    : {}),
+};
 ---
 
 <html lang="id">
@@ -35,6 +65,8 @@ const ogImage = 'https://galamed.id/legacy/ss-galamed.webp';
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
     <!-- Google Search Console: paste your verification code here after creating the property.
          Search Console → Settings → Verification → HTML tag → copy content="..." value. -->
