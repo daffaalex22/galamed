@@ -56,3 +56,5 @@ collections:
           - { label: 'Email', name: email, widget: string, hint: 'cth: refa@galamed.id' }
           - { label: 'No. WA Tampil', name: phoneDisplay, widget: string, hint: 'cth: +62 823-1582-2926' }
           - { label: 'No. WA Sistem', name: waNumber, widget: string, hint: 'PENTING: angka saja diawali 62, tanpa +, spasi, strip. cth: 6282315822926' }
+          - { label: 'Alamat', name: address, widget: text, required: false, hint: 'Alamat kantor/warehouse, tampil di footer. Kosongkan jika belum siap.' }
+          - { label: 'Jam Layanan', name: hours, widget: string, required: false, hint: 'cth: Senin-Jumat 08:00-17:00 WIB' }
