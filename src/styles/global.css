@@ -3,6 +3,11 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
+  /* Display: headings only. Plus Jakarta Sans was drawn by Tokotype for
+     Jakarta's own brand identity: an Indonesian voice for an Indonesian brand,
+     and a deliberate step away from the Inter-everywhere default. */
+  --font-display: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+
   /* ============================================================
      GALAMED v1 PALETTE (LOCKED FOR LAUNCH)
      Source: SS Galamed.png (GALA navy + MED teal) + GPH circle logo
@@ -47,6 +52,13 @@ html {
 body {
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
 
 button:not(:disabled) {
