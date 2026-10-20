@@ -44,6 +44,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+button:not(:disabled) {
+  cursor: pointer;
+}
+
 :focus-visible {
   outline: 3px solid var(--color-brand-500);
   outline-offset: 2px;
