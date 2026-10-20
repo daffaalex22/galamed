@@ -31,6 +31,11 @@
      (fights with WhatsApp green) */
   --color-cross-600: #d80000;
 
+  /* ★ Reserved: WhatsApp brand green for WhatsApp CTAs only,
+     so every WA button site-wide is the exact same green */
+  --color-wa-500: #25d366;
+  --color-wa-600: #1da851;
+
   --color-ink-900: #0f172a;
   --color-ink-600: #475569;
 }
