@@ -9,8 +9,8 @@ interface Props {
   description?: string;
 }
 const {
-  title = 'Galamed — Distributor Alat Kesehatan Premium | PT Galunggung Perkasa Husada',
-  description = 'PT Galunggung Perkasa Husada (Galamed) — distributor alat kesehatan premium: kasa steril, kasa lipat, dan consumables klinis standar internasional. Minta penawaran via WhatsApp.',
+  title = 'Galamed: Distributor Alat Kesehatan Premium | PT Galunggung Perkasa Husada',
+  description = 'Distributor alat kesehatan premium di bawah PT Galunggung Perkasa Husada (Galamed): kasa steril, kasa lipat, dan consumables klinis standar internasional. Minta penawaran via WhatsApp.',
 } = Astro.props;
 const canonical = 'https://galamed.id/';
 const ogImage = 'https://galamed.id/legacy/ss-galamed.webp';
@@ -63,7 +63,7 @@ const ogImage = 'https://galamed.id/legacy/ss-galamed.webp';
     <slot />
     <footer class="border-t border-slate-100 bg-navy-900 text-slate-300">
       <div class="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-8 text-sm md:flex-row md:items-center md:justify-between">
-        <span>© {new Date().getFullYear()} {site.company} — {site.brand}</span>
+        <span>© {new Date().getFullYear()} {site.company} · {site.brand}</span>
         <span>{site.email} · {site.phoneDisplay}</span>
       </div>
     </footer>

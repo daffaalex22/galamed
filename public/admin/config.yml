@@ -1,4 +1,4 @@
-# Galamed CMS — diedit via https://galamed.vercel.app/admin
+# Galamed CMS: diedit via https://galamed.vercel.app/admin
 # Login = akun GitHub (butuh akses Write ke repo, lihat CMS_GUIDE.md).
 # local_backend dipakai saat development lokal (jalankan `npm run cms`).
 

@@ -1,8 +1,8 @@
-# Galamed — Launch Checklist (Level 5)
+# Galamed: Launch Checklist (Level 5)
 
-Account: refaariaramdhani@gmail.com — use this Gmail for ALL steps below.
+Account: refaariaramdhani@gmail.com, use this Gmail for ALL steps below.
 
-## 1. Deploy (do first — Google can't index localhost)
+## 1. Deploy (do first, Google can't index localhost)
 
 - [ ] Push `D:\Programming\galamed` to GitHub
 - [ ] Import repo in Netlify (or Vercel) → build command `npm run build` → publish dir `dist`
@@ -10,15 +10,15 @@ Account: refaariaramdhani@gmail.com — use this Gmail for ALL steps below.
 - [ ] At your domain registrar, set the A / CNAME records → wait until `https://galamed.id` loads
 - [ ] Confirm `https://galamed.id/robots.txt` and `https://galamed.id/sitemap.xml` both load
 
-## 2. Google Search Console — "am I on Google?" (5 min)
+## 2. Google Search Console: "am I on Google?" (5 min)
 
 - [ ] Go to https://search.google.com/search-console → Sign in with refaariaramdhani@gmail.com
 - [ ] Add property → Domain → enter `galamed.id` → verify via DNS TXT record
 - [ ] Sitemaps (left menu) → add `sitemap.xml` → Submit → status should turn Success
-- [ ] Day 1–7 proof: Google `site:galamed.id` — your homepage must appear
+- [ ] Day 1–7 proof: Google `site:galamed.id`, your homepage must appear
 - [ ] Week 2+: Performance tab → see real queries (e.g. `kasa steril distributor`)
 
-## 3. GA4 — "what do visitors do?" (10 min, optional for launch)
+## 3. GA4: "what do visitors do?" (10 min, optional for launch)
 
 - [ ] https://analytics.google.com → same Gmail → Create property `Galamed`
 - [ ] Data Streams → Web → `https://galamed.id` → copy Measurement ID `G-XXXXXXXX`
@@ -31,7 +31,7 @@ Account: refaariaramdhani@gmail.com — use this Gmail for ALL steps below.
 - [ ] In `src/layouts/BaseLayout.astro`, uncomment the `google-site-verification` meta and paste the code
 - [ ] Redeploy
 
-## 5. Google Business Profile — highest ROI for RS buyers (15 min)
+## 5. Google Business Profile: highest ROI for RS buyers (15 min)
 
 - [ ] https://business.google.com → same Gmail → add `PT Galunggung Perkasa Husada`
 - [ ] Category: Medical Supply / Alat Kesehatan; add WA +62 823-1582-2926, email refa@galamed.id
