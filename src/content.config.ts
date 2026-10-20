@@ -9,7 +9,7 @@ const products = defineCollection({
     name: z.string(),
     short: z.string(),
     desc: z.string(),
-    category: z.enum(['Kasa & Luka', 'Kebersihan & Antiseptik', 'Proteksi', 'Pendukung Klinis']),
+    category: z.enum(['Kasa & Kapas', 'Perawatan Luka', 'Antiseptik']),
     image: z.string().default('/legacy/sterile.webp'),
   }),
 });

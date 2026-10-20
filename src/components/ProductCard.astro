@@ -14,14 +14,14 @@ const { product } = Astro.props;
 <article
   class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
 >
-  <div class="relative h-40 overflow-hidden bg-brand-50">
+  <div class="relative aspect-square overflow-hidden border-b border-slate-100 bg-gradient-to-b from-brand-50/80 via-white to-white">
     <img
       src={product.image}
       alt={product.name}
       loading="lazy"
       width="700"
       height="700"
-      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      class="absolute inset-0 h-full w-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
     />
     <span class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-brand-800 shadow-sm backdrop-blur">
       {product.category}

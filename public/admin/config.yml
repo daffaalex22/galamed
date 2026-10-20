@@ -36,10 +36,9 @@ collections:
         name: category
         widget: select
         options:
-          - 'Kasa & Luka'
-          - 'Kebersihan & Antiseptik'
-          - 'Proteksi'
-          - 'Pendukung Klinis'
+          - 'Kasa & Kapas'
+          - 'Perawatan Luka'
+          - 'Antiseptik'
       - { label: 'Foto Produk', name: image, widget: image, hint: 'Otomatis tersimpan di /images/products. JPG/PNG/WebP.' }
 
   - name: settings
