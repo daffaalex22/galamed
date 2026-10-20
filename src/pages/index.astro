@@ -13,41 +13,74 @@ const categories = ['Semua', ...new Set(products.map((p) => p.category))];
 ---
 
 <BaseLayout>
-  <header id="home" class="bg-gradient-to-b from-brand-50 to-white">
-    <div class="mx-auto max-w-6xl px-6 py-16 text-center md:py-20">
-      <img
-        src="/legacy/ss-galamed.webp"
-        alt="Galamed: Advancing Healthcare, Improving Lives"
-        width="803"
-        height="222"
-        fetchpriority="high"
-        class="mx-auto h-20 w-auto rounded-xl bg-white object-contain px-6 py-2 shadow-sm md:h-24"
-      />
-      <span class="mt-6 inline-block rounded-full bg-brand-100 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-brand-800">
-        {site.tagline}
-      </span>
-      <h1 class="mx-auto mt-6 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-navy-800 md:text-5xl">
-        Solusi Alat Kesehatan Premium & Terpercaya
-      </h1>
-      <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
-        Distributor konsumabel medis resmi, lengkap dari kasa steril, kapas, balutan,
-        hingga antiseptik untuk kebutuhan instansi medis dan distributor.
-      </p>
-      <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-        <a
-          href="#products"
-          class="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-brand-700 px-6 py-3 font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-md"
-        >
-          Lihat Produk
-        </a>
-        <a
-          href={site.waLink}
-          target="_blank"
-          rel="noopener"
-          class="inline-flex min-h-[44px] items-center justify-center rounded-lg border-2 border-brand-700 px-6 py-3 font-semibold text-brand-700 transition hover:bg-brand-50"
-        >
-          WhatsApp Kami
-        </a>
+  <header id="home" class="bg-brand-50">
+    <div class="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+      <div>
+        <h1 class="max-w-xl text-4xl font-extrabold leading-tight tracking-tight text-navy-800 md:text-5xl">
+          Kasa steril, kapas, dan perawatan luka untuk rumah sakit & apotek
+        </h1>
+        <p class="mt-4 max-w-xl text-lg leading-relaxed text-slate-600">
+          Distributor resmi di bawah PT Galunggung Perkasa Husada.
+          Konsultasi kebutuhan, quotation resmi, hingga pengiriman terdokumentasi —
+          semuanya bisa dimulai lewat WhatsApp.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a
+            href={site.waLink}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-brand-700 px-6 py-3 font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-md"
+          >
+            Minta Penawaran via WhatsApp
+          </a>
+          <a
+            href="#products"
+            class="inline-flex min-h-[44px] items-center justify-center rounded-lg border-2 border-brand-700 bg-transparent px-6 py-3 font-semibold text-brand-700 transition hover:bg-white"
+          >
+            Lihat Katalog
+          </a>
+        </div>
+        <ul class="mt-8 flex flex-col gap-2 text-sm text-slate-600 sm:flex-row sm:flex-wrap sm:gap-x-6">
+          <li class="flex items-center gap-2">
+            <svg class="h-4 w-4 shrink-0 text-brand-700" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+            </svg>
+            Kemasan besar untuk instansi
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="h-4 w-4 shrink-0 text-brand-700" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+            </svg>
+            Quotation resmi & cepat
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="h-4 w-4 shrink-0 text-brand-700" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+            </svg>
+            Pengiriman terdokumentasi
+          </li>
+        </ul>
+      </div>
+      <div class="mt-12 lg:mt-0">
+        <figure class="relative overflow-hidden rounded-3xl border border-brand-100 bg-gradient-to-b from-white to-brand-100/60 shadow-sm">
+          <img
+            src="/legacy/sterile.webp"
+            alt="Gauze Swab kasa steril produksi Galamed"
+            width="700"
+            height="700"
+            fetchpriority="high"
+            class="h-72 w-full object-contain p-10 md:h-[26rem]"
+          />
+          <figcaption class="absolute inset-x-4 bottom-4 flex flex-col gap-2 rounded-xl bg-white/85 px-4 py-3 shadow-sm backdrop-blur sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p class="text-sm font-semibold text-navy-800">Gauze Swab — Kasa Steril</p>
+              <p class="text-xs text-slate-500">Salah satu dari {products.length} produk konsumabel medis</p>
+            </div>
+            <a href="#products" class="text-sm font-semibold text-brand-700">
+              Lihat katalog &rarr;
+            </a>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </header>
