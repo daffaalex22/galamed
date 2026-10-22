@@ -14,6 +14,13 @@ import { site } from '../data/site';
         class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       />
     </label>
+    <label class="grid gap-1 text-sm md:col-span-2">
+      Jabatan
+      <input
+        name="jabatan" placeholder="cth: Owner / Purchasing"
+        class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
+      />
+    </label>
     <label class="grid gap-1 text-sm">
       Nama Instansi/Distributor
       <input
@@ -67,7 +74,7 @@ import { site } from '../data/site';
     e.preventDefault();
     const data = new FormData(form);
     const lines = [
-      `Halo Galamed, saya ${data.get('name')}.`,
+      `Halo Galamed, saya ${data.get('name')}${data.get('jabatan') ? `, ${data.get('jabatan')}` : ''}.`,
       `Instansi/Distributor: ${data.get('orgName')}`,
       `Alamat: ${data.get('orgAddress')}`,
       `Kebutuhan produk:`,
