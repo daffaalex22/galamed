@@ -14,7 +14,7 @@ import { site } from '../data/site';
         class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       />
     </label>
-    <label class="grid gap-1 text-sm md:col-span-2">
+    <label class="grid gap-1 text-sm">
       Jabatan
       <input
         name="jabatan" placeholder="cth: Owner / Purchasing"
@@ -25,6 +25,13 @@ import { site } from '../data/site';
       Nama Instansi/Distributor
       <input
         name="orgName" required placeholder="cth: RS Contoh / Apotek Sejahtera"
+        class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
+      />
+    </label>
+    <label class="grid gap-1 text-sm">
+      No. HP/Email
+      <input
+        name="contact" required placeholder="cth: +62 812-3456-7890"
         class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       />
     </label>
@@ -76,6 +83,7 @@ import { site } from '../data/site';
     const lines = [
       `Halo Galamed, saya ${data.get('name')}${data.get('jabatan') ? `, ${data.get('jabatan')}` : ''}.`,
       `Instansi/Distributor: ${data.get('orgName')}`,
+      `Kontak: ${data.get('contact')}`,
       `Alamat: ${data.get('orgAddress')}`,
       `Kebutuhan produk:`,
       `${data.get('need')}`,
