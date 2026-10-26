@@ -17,11 +17,12 @@ const categories = ['Semua', ...new Set(products.map((p) => p.category))];
     <div class="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
       <div>
         <h1 class="max-w-xl text-4xl font-extrabold leading-tight tracking-tight text-navy-800 md:text-5xl">
-          Kasa steril, kapas, dan perawatan luka untuk rumah sakit & apotek
+          Kasa hidrofil lengkap untuk rumah sakit & apotek
         </h1>
         <p class="mt-4 max-w-xl text-lg leading-relaxed text-slate-600">
           Distributor resmi di bawah PT Galunggung Perkasa Husada:
-          konsultasi kebutuhan, quotation resmi, hingga pengiriman terdokumentasi.
+          kasa hidrofil lengkap, konsultasi kebutuhan, quotation resmi,
+          hingga pengiriman terdokumentasi.
           Semuanya bisa dimulai lewat WhatsApp.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -64,8 +65,8 @@ const categories = ['Semua', ...new Set(products.map((p) => p.category))];
       <div class="mt-12 lg:mt-0">
         <figure class="relative overflow-hidden rounded-3xl border border-brand-100 bg-gradient-to-b from-white to-brand-100/60 shadow-sm">
           <img
-            src="/legacy/sterile.webp"
-            alt="Gauze Swab kasa steril produksi Galamed"
+            src="/images/products/Kasa%20Hidrofil%20Lipat%205x5%205pcs%20-%202.jpg"
+            alt="Kasa Hidrofil Lipat produksi Galamed"
             width="700"
             height="700"
             fetchpriority="high"
@@ -73,7 +74,7 @@ const categories = ['Semua', ...new Set(products.map((p) => p.category))];
           />
           <figcaption class="absolute inset-x-4 bottom-4 flex flex-col gap-2 rounded-xl bg-white/85 px-4 py-3 shadow-sm backdrop-blur sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p class="text-sm font-semibold text-navy-800">Gauze Swab (Kasa Steril)</p>
+              <p class="text-sm font-semibold text-navy-800">Kasa Hidrofil Lipat</p>
               <p class="text-xs text-slate-500">Salah satu dari {products.length} produk konsumabel medis</p>
             </div>
             <a href="#products" class="text-sm font-semibold text-brand-700">
@@ -105,24 +106,26 @@ const categories = ['Semua', ...new Set(products.map((p) => p.category))];
     </section>
 
     <section id="products" class="scroll-mt-24">
-      <SectionHeading eyebrow="Katalog Resmi" title="Produk Konsumabel Medis" desc="Rangkaian kasa, kapas, dan perawatan luka berkualitas medis. Tersedia dalam kemasan besar untuk kebutuhan instansi." />
+      <SectionHeading eyebrow="Katalog Resmi" title="Produk Konsumabel Medis" desc="Rangkaian kasa hidrofil berkualitas medis: lipat, lembaran, roll, hingga big gauze. Tersedia dalam kemasan besar untuk kebutuhan instansi." />
       <div class="mt-6 flex flex-col gap-3 md:flex-row md:items-center">
         <input
           id="product-search"
           type="search"
-          placeholder="Cari produk… (cth: kasa, kapas)"
+          placeholder="Cari produk… (cth: kasa hidrofil)"
           class="min-h-[44px] w-full rounded-lg border border-slate-300 px-4 py-2 text-[15px] focus:border-brand-500 focus:outline-none md:max-w-sm"
         />
-        <div id="product-filters" class="flex flex-wrap gap-2">
-          {categories.map((c, i) => (
-            <button
-              data-cat={c}
-              class={`min-h-[44px] rounded-full border px-4 py-2 text-sm font-semibold transition ${i === 0 ? 'border-brand-700 bg-brand-700 text-white' : 'border-slate-300 text-navy-800 hover:border-brand-700 hover:text-brand-700'}`}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
+        {categories.length > 2 && (
+          <div id="product-filters" class="flex flex-wrap gap-2">
+            {categories.map((c, i) => (
+              <button
+                data-cat={c}
+                class={`min-h-[44px] rounded-full border px-4 py-2 text-sm font-semibold transition ${i === 0 ? 'border-brand-700 bg-brand-700 text-white' : 'border-slate-300 text-navy-800 hover:border-brand-700 hover:text-brand-700'}`}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
       <p id="product-count" class="mt-3 text-sm text-slate-500" aria-live="polite"></p>
       <div id="product-grid" class="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
