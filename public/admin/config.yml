@@ -30,8 +30,7 @@ collections:
       preview: false
     fields:
       - { label: 'Nama Produk', name: name, widget: string, hint: 'cth: Sterile Gauze (Kasa Steril)' }
-      - { label: 'Ringkasan Pendek', name: short, widget: string, hint: '1 baris, tampil di kartu produk' }
-      - { label: 'Deskripsi', name: desc, widget: text, hint: '1-2 kalimat untuk kartu produk' }
+      - { label: 'Deskripsi', name: desc, widget: text, hint: '1-2 kalimat untuk kartu produk: bentuk, ukuran, kemasan, pemakaian' }
       - label: 'Kategori'
         name: category
         widget: select

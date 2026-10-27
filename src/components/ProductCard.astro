@@ -1,4 +1,6 @@
 ---
+import { site } from '../data/site';
+
 interface Product {
   name: string;
   short: string;
@@ -10,9 +12,11 @@ interface Props {
   product: Product;
 }
 const { product } = Astro.props;
+// WhatsApp message prefilled with the product name so the sales chat starts informed.
+const waLinkProduct = `https://wa.me/${site.waNumber}?text=${encodeURIComponent(`Halo Galamed, saya ingin minta penawaran untuk ${product.name}.`)}`;
 ---
 <article
-  class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+  class="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
 >
   <div class="relative aspect-square overflow-hidden border-b border-slate-100 bg-gradient-to-b from-brand-50/80 via-white to-white">
     <img
@@ -27,10 +31,29 @@ const { product } = Astro.props;
       {product.category}
     </span>
   </div>
-  <div class="space-y-2 p-5">
+  <div class="flex grow flex-col p-5">
     <h3 class="font-semibold leading-snug text-navy-800 transition-colors group-hover:text-brand-700">
       {product.name}
     </h3>
-    <p class="text-sm leading-relaxed text-slate-600">{product.desc}</p>
+    <p class="mt-2 text-sm leading-relaxed text-slate-600">{product.desc}</p>
+    <div class="mt-auto pt-3">
+      <p class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500">
+        <svg class="h-3.5 w-3.5 shrink-0 text-brand-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+        </svg>
+        <span>Ukuran &amp; kemasan bisa menyesuaikan pesanan Anda</span>
+      </p>
+      <a
+        href={waLinkProduct}
+        target="_blank"
+        rel="noopener"
+        class="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 transition hover:text-brand-800"
+      >
+        Minta penawaran
+        <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    </div>
   </div>
 </article>

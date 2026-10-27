@@ -2,50 +2,51 @@
 import { site } from '../data/site';
 ---
 <div class="rounded-2xl bg-navy-900 p-8 text-white md:p-12">
-  <h2 class="text-3xl font-bold tracking-tight">Minta Penawaran Resmi</h2>
+  <h2 class="text-3xl font-bold tracking-tight">Minta penawaran resmi</h2>
   <p class="mt-2 max-w-xl text-slate-300">
-    Isi kebutuhan, lalu tombol akan membuka WhatsApp dengan pesan terisi otomatis. Tanpa server, tanpa spam.
+    Isi kebutuhan Anda, lalu klik &ldquo;Kirim via WhatsApp&rdquo; &mdash; WhatsApp akan terbuka dengan pesan yang sudah terisi otomatis. Data tidak dikirim ke situs ini.
   </p>
+  <p class="mt-1 text-xs text-slate-400">Kolom bertanda <span aria-hidden="true" class="text-brand-200">*</span> wajib diisi.</p>
   <form id="quote-form" class="mt-6 grid gap-4 md:grid-cols-2">
     <label class="grid gap-1 text-sm">
-      Nama
+      <span>Nama <span aria-hidden="true" class="text-brand-200">*</span></span>
       <input
-        name="name" required placeholder="cth: Budi Santoso"
+        name="name" required placeholder="mis: Budi Santoso"
         class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       />
     </label>
     <label class="grid gap-1 text-sm">
-      Jabatan
+      Jabatan (opsional)
       <input
-        name="jabatan" placeholder="cth: Owner / Purchasing"
+        name="jabatan" placeholder="mis: Owner / Purchasing"
         class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       />
     </label>
     <label class="grid gap-1 text-sm">
-      Nama Instansi/Distributor
+      <span>Nama instansi / distributor <span aria-hidden="true" class="text-brand-200">*</span></span>
       <input
-        name="orgName" required placeholder="cth: RS Contoh / Apotek Sejahtera"
+        name="orgName" required placeholder="mis: RS Umum Bandung / Apotek Sejahtera"
         class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       />
     </label>
     <label class="grid gap-1 text-sm">
-      No. HP/Email
+      <span>No. HP / email <span aria-hidden="true" class="text-brand-200">*</span></span>
       <input
-        name="contact" required placeholder="cth: +62 812-3456-7890"
+        name="contact" required placeholder="mis: +62 812-3456-7890"
         class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       />
     </label>
     <label class="grid gap-1 text-sm md:col-span-2">
-      Alamat Instansi/Distributor
+      <span>Alamat instansi / distributor <span aria-hidden="true" class="text-brand-200">*</span></span>
       <textarea
-        name="orgAddress" rows="2" required placeholder="cth: Jl. Merdeka No. 123, Bandung"
+        name="orgAddress" rows="2" required placeholder="mis: Jl. Merdeka No. 123, Bandung"
         class="rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       ></textarea>
     </label>
     <label class="grid gap-1 text-sm md:col-span-2">
-      Kebutuhan Produk
+      <span>Kebutuhan produk <span aria-hidden="true" class="text-brand-200">*</span></span>
       <textarea
-        name="need" rows="3" required placeholder="cth: 100 box Kasa Hidrofil Lipat, 50 roll Kasa Hidrofil Roll"
+        name="need" rows="3" required placeholder="mis: 100 box Kasa Hidrofil Lipat, 50 roll Kasa Hidrofil Roll — ukuran dan kemasan bisa disesuaikan"
         class="rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       ></textarea>
     </label>
@@ -74,7 +75,7 @@ import { site } from '../data/site';
       </a>
     </div>
   </form>
-  <p class="mt-4 text-sm text-slate-400">Respons cepat: {site.phoneDisplay}</p>
+  <p class="mt-4 text-sm text-slate-400">Dibalas pada jam kerja ({site.hours}). Telepon/WA: {site.phoneDisplay}</p>
 </div>
 
 <script define:vars={{ waNumber: site.waNumber }}>
