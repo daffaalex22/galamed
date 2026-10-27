@@ -52,6 +52,11 @@ html {
 body {
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
+  /* Guardrail: clip stray horizontal overflow so phones never scroll sideways
+     (a long unbreakable string anywhere once pushed the whole page wide).
+     Use clip, not hidden: it creates no scroll container, so the sticky
+     navbar and anchor scrolling keep working. */
+  overflow-x: clip;
 }
 
 h1,

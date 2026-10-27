@@ -112,7 +112,7 @@ const categories = ['Semua', ...new Set(products.map((p) => p.category))];
           id="product-search"
           type="search"
           placeholder="Cari produk… (cth: kasa hidrofil)"
-          class="min-h-[44px] w-full rounded-lg border border-slate-300 px-4 py-2 text-[15px] focus:border-brand-500 focus:outline-none md:max-w-sm"
+          class="min-h-[44px] w-full rounded-lg border border-slate-300 px-4 py-2 text-base focus:border-brand-500 focus:outline-none md:max-w-sm"
         />
         {categories.length > 2 && (
           <div id="product-filters" class="flex flex-wrap gap-2">
