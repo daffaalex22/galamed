@@ -9,9 +9,12 @@ interface Props {
   description?: string;
 }
 const {
-  title = 'Galamed: Distributor Alat Kesehatan Premium | PT Galunggung Perkasa Husada',
-  description = 'Distributor alat kesehatan premium di bawah PT Galunggung Perkasa Husada (Galamed): kasa hidrofil lengkap dan consumables klinis standar internasional. Minta penawaran via WhatsApp.',
+  title = 'Galamed — Distributor Kasa Hidrofil & Konsumabel Medis',
+  description = 'Distributor kasa hidrofil dari PT Galunggung Perkasa Husada (memegang IDAK & sertifikat CDAKB) untuk rumah sakit, apotek, dan distributor. Minta penawaran via WhatsApp.',
 } = Astro.props;
+// Izin Distribusi Alat Kesehatan (IDAK) — PT Galunggung Perkasa Husada, terverifikasi OSS.
+// Full certificate: public/images/IDAK PT Galunggung Perkasa Husada.pdf.png
+const idakNumber = '23032300096620005';
 const canonical = 'https://galamed.id/';
 const ogImage = 'https://galamed.id/legacy/ss-galamed.webp';
 
@@ -24,7 +27,7 @@ const structuredData = {
   logo: ogImage,
   email: site.email,
   telephone: `+${site.waNumber}`,
-  description: 'Distributor konsumabel medis resmi: kasa hidrofil lengkap untuk instansi medis.',
+  description: `Distributor alat kesehatan resmi (IDAK No. ${idakNumber}): kasa hidrofil lengkap untuk fasilitas kesehatan & distributor.`,
   contactPoint: [
     {
       '@type': 'ContactPoint',
@@ -101,24 +104,25 @@ const structuredData = {
               <img src="/legacy/logo-galamed.png" alt="Galamed" width="1471" height="287" class="h-8 w-auto object-contain" loading="lazy" />
             </a>
             <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
-              Distributor konsumabel medis resmi di bawah {site.company}.
-              Kasa hidrofil lengkap untuk instansi medis dan distributor.
+              Distributor konsumabel medis resmi dari {site.company}.
+              Kasa hidrofil lengkap untuk fasilitas kesehatan dan distributor.
+              Memegang Izin Distribusi Alat Kesehatan (IDAK) &amp; Sertifikat CDAKB.
             </p>
           </div>
           <nav aria-label="Tautan cepat">
-            <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-200">Tautan Cepat</p>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-200">Tautan cepat</p>
             <ul class="mt-4 grid gap-2 text-sm">
               <li><a href="#home" class="text-slate-300 transition hover:text-brand-200">Beranda</a></li>
-              <li><a href="#about" class="text-slate-300 transition hover:text-brand-200">Tentang Kami</a></li>
+              <li><a href="#about" class="text-slate-300 transition hover:text-brand-200">Tentang kami</a></li>
               <li><a href="#products" class="text-slate-300 transition hover:text-brand-200">Produk</a></li>
               <li><a href="#layanan" class="text-slate-300 transition hover:text-brand-200">Layanan</a></li>
-              <li><a href="#contact" class="text-slate-300 transition hover:text-brand-200">Hubungi Kami</a></li>
+              <li><a href="#contact" class="text-slate-300 transition hover:text-brand-200">Hubungi kami</a></li>
             </ul>
           </nav>
           <div>
             <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-200">Kontak</p>
             <ul class="mt-4 grid gap-2 text-sm">
-              <li><a href={`mailto:${site.email}`} class="text-slate-300 transition hover:text-brand-200">{site.email}</a></li>
+              <li><a href={`mailto:${site.email}`} class="break-all text-slate-300 transition hover:text-brand-200">{site.email}</a></li>
               <li><a href={`tel:+${site.waNumber}`} class="text-slate-300 transition hover:text-brand-200">{site.phoneDisplay}</a></li>
               <li><a href={site.waLink} target="_blank" rel="noopener" class="text-slate-300 transition hover:text-brand-200">Chat via WhatsApp</a></li>
             </ul>

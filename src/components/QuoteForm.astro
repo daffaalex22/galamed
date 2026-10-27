@@ -2,57 +2,58 @@
 import { site } from '../data/site';
 ---
 <div class="rounded-2xl bg-navy-900 p-8 text-white md:p-12">
-  <h2 class="text-3xl font-bold tracking-tight">Minta Penawaran Resmi</h2>
+  <h2 class="text-3xl font-bold tracking-tight">Minta penawaran resmi</h2>
   <p class="mt-2 max-w-xl text-slate-300">
-    Isi kebutuhan, lalu tombol akan membuka WhatsApp dengan pesan terisi otomatis. Tanpa server, tanpa spam.
+    Isi kebutuhan Anda, lalu klik &ldquo;Kirim via WhatsApp&rdquo; &mdash; WhatsApp akan terbuka dengan pesan yang sudah terisi otomatis. Data tidak dikirim ke situs ini.
   </p>
+  <p class="mt-1 text-xs text-slate-400">Kolom bertanda <span aria-hidden="true" class="text-brand-200">*</span> wajib diisi.</p>
   <form id="quote-form" class="mt-6 grid gap-4 md:grid-cols-2">
     <label class="grid gap-1 text-sm">
-      Nama
+      <span>Nama <span aria-hidden="true" class="text-brand-200">*</span></span>
       <input
-        name="name" required placeholder="cth: Budi Santoso"
+        name="name" required placeholder="mis: Budi Santoso"
         class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       />
     </label>
     <label class="grid gap-1 text-sm">
-      Jabatan
+      Jabatan (opsional)
       <input
-        name="jabatan" placeholder="cth: Owner / Purchasing"
+        name="jabatan" placeholder="mis: Owner / Purchasing"
         class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       />
     </label>
     <label class="grid gap-1 text-sm">
-      Nama Instansi/Distributor
+      <span>Nama instansi / distributor <span aria-hidden="true" class="text-brand-200">*</span></span>
       <input
-        name="orgName" required placeholder="cth: RS Contoh / Apotek Sejahtera"
+        name="orgName" required placeholder="mis: RS Umum Bandung / Apotek Sejahtera"
         class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       />
     </label>
     <label class="grid gap-1 text-sm">
-      No. HP/Email
+      <span>No. HP / email <span aria-hidden="true" class="text-brand-200">*</span></span>
       <input
-        name="contact" required placeholder="cth: +62 812-3456-7890"
+        name="contact" required placeholder="mis: +62 812-3456-7890"
         class="min-h-[44px] rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       />
     </label>
     <label class="grid gap-1 text-sm md:col-span-2">
-      Alamat Instansi/Distributor
+      <span>Alamat instansi / distributor <span aria-hidden="true" class="text-brand-200">*</span></span>
       <textarea
-        name="orgAddress" rows="2" required placeholder="cth: Jl. Merdeka No. 123, Bandung"
+        name="orgAddress" rows="2" required placeholder="mis: Jl. Merdeka No. 123, Bandung"
         class="rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       ></textarea>
     </label>
     <label class="grid gap-1 text-sm md:col-span-2">
-      Kebutuhan Produk
+      <span>Kebutuhan produk <span aria-hidden="true" class="text-brand-200">*</span></span>
       <textarea
-        name="need" rows="3" required placeholder="cth: 100 box Kasa Hidrofil Lipat, 50 roll Kasa Hidrofil Roll"
+        name="need" rows="3" required placeholder="mis: 100 box Kasa Hidrofil Lipat, 50 roll Kasa Hidrofil Roll — ukuran dan kemasan bisa disesuaikan"
         class="rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/50 focus:outline-none"
       ></textarea>
     </label>
     <div class="flex flex-col gap-3 sm:flex-row md:col-span-2">
       <button
         type="submit"
-        class="min-h-[44px] flex-1 cursor-pointer rounded-lg bg-wa-500 px-6 py-3 font-bold text-white transition hover:bg-wa-600 hover:shadow-lg hover:shadow-wa-500/25 active:scale-[0.98]"
+        class="min-h-[44px] min-w-0 flex-1 cursor-pointer rounded-lg bg-wa-500 px-4 py-3 font-bold text-white transition hover:bg-wa-600 hover:shadow-lg hover:shadow-wa-500/25 active:scale-[0.98] sm:px-6"
       >
         <span class="inline-flex items-center justify-center gap-2">
           <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -63,16 +64,18 @@ import { site } from '../data/site';
       </button>
       <a
         href={`mailto:${site.email}`}
-        class="min-h-[44px] inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-white/30 px-6 py-3 font-semibold transition hover:bg-white/10 hover:border-white/50"
+        class="min-h-[44px] inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-lg border border-white/30 px-4 py-3 text-sm font-semibold transition hover:bg-white/10 hover:border-white/50 sm:px-6 sm:text-base"
       >
         <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 9.909a2.25 2.25 0 0 1-1.07-1.916V6.75" />
         </svg>
-        {site.email}
+        <!-- break-all: the email is a 36-char unbreakable word and would push this
+             button past the viewport on phones otherwise. -->
+        <span class="break-all">{site.email}</span>
       </a>
     </div>
   </form>
-  <p class="mt-4 text-sm text-slate-400">Respons cepat: {site.phoneDisplay}</p>
+  <p class="mt-4 text-sm text-slate-400">Dibalas pada jam kerja ({site.hours}). Telepon/WA: {site.phoneDisplay}</p>
 </div>
 
 <script define:vars={{ waNumber: site.waNumber }}>

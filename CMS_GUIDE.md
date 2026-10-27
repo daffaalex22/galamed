@@ -8,8 +8,7 @@ Buka: **https://galamed.vercel.app/admin** → **Login with GitHub**
 1. Buka **Produk** → **New Produk** (atau klik produk yang mau diubah).
 2. Isi:
    - **Nama Produk**: cth: `Alcohol Swab Dus 100`
-   - **Ringkasan Pendek**: 1 baris
-   - **Deskripsi**: 1–2 kalimat
+   - **Deskripsi**: 1–2 kalimat (bentuk produk, ukuran, kemasan, pemakaian)
    - **Kategori**: pilih dari dropdown (jangan ketik bebas)
    - **Foto Produk**: klik upload, pilih JPG/PNG dari HP/laptop
 3. Klik **Publish** → **Publish now**.

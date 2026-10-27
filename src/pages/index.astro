@@ -20,10 +20,12 @@ const categories = ['Semua', ...new Set(products.map((p) => p.category))];
           Kasa hidrofil lengkap untuk rumah sakit & apotek
         </h1>
         <p class="mt-4 max-w-xl text-lg leading-relaxed text-slate-600">
-          Distributor resmi di bawah PT Galunggung Perkasa Husada:
-          kasa hidrofil lengkap, konsultasi kebutuhan, quotation resmi,
-          hingga pengiriman terdokumentasi.
-          Semuanya bisa dimulai lewat WhatsApp.
+          Galamed adalah merek distribusi dari PT Galunggung Perkasa Husada,
+          yang memegang Izin Distribusi Alat Kesehatan (IDAK) dan Sertifikat CDAKB.
+          Kami menyediakan kasa hidrofil lengkap dengan kemasan besar
+          untuk rumah sakit, apotek, dan distributor &mdash; mulai dari konsultasi
+          kebutuhan, penawaran resmi, hingga pengiriman terdokumentasi,
+          semuanya bisa dimulai lewat WhatsApp.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <a
@@ -32,13 +34,13 @@ const categories = ['Semua', ...new Set(products.map((p) => p.category))];
             rel="noopener"
             class="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-brand-700 px-6 py-3 font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-md"
           >
-            Minta Penawaran via WhatsApp
+            Minta penawaran via WhatsApp
           </a>
           <a
             href="#products"
             class="inline-flex min-h-[44px] items-center justify-center rounded-lg border-2 border-brand-700 bg-transparent px-6 py-3 font-semibold text-brand-700 transition hover:bg-white"
           >
-            Lihat Katalog
+            Lihat katalog
           </a>
         </div>
         <ul class="mt-8 flex flex-col gap-2 text-sm text-slate-600 sm:flex-row sm:flex-wrap sm:gap-x-6">
@@ -46,19 +48,19 @@ const categories = ['Semua', ...new Set(products.map((p) => p.category))];
             <svg class="h-4 w-4 shrink-0 text-brand-700" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
             </svg>
-            Kemasan besar untuk instansi
+            Ukuran &amp; kemasan bisa menyesuaikan pesanan
           </li>
           <li class="flex items-center gap-2">
             <svg class="h-4 w-4 shrink-0 text-brand-700" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
             </svg>
-            Quotation resmi & cepat
+            Penawaran resmi dibalas pada jam kerja
           </li>
           <li class="flex items-center gap-2">
             <svg class="h-4 w-4 shrink-0 text-brand-700" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
             </svg>
-            Pengiriman terdokumentasi
+            Pengiriman aman &amp; terdokumentasi
           </li>
         </ul>
       </div>
@@ -75,7 +77,7 @@ const categories = ['Semua', ...new Set(products.map((p) => p.category))];
           <figcaption class="absolute inset-x-4 bottom-4 flex flex-col gap-2 rounded-xl bg-white/85 px-4 py-3 shadow-sm backdrop-blur sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p class="text-sm font-semibold text-navy-800">Kasa Hidrofil Lipat</p>
-              <p class="text-xs text-slate-500">Salah satu dari {products.length} produk konsumabel medis</p>
+              <p class="text-xs text-slate-500">1 dari {products.length} produk konsumabel medis kami</p>
             </div>
             <a href="#products" class="text-sm font-semibold text-brand-700">
               Lihat katalog &rarr;
@@ -88,31 +90,74 @@ const categories = ['Semua', ...new Set(products.map((p) => p.category))];
 
   <main class="mx-auto max-w-6xl space-y-20 px-6 py-16">
     <section id="about" class="scroll-mt-24">
-      <div class="grid items-center gap-8 md:grid-cols-[1fr_320px]">
+      <div class="grid items-center gap-10 md:grid-cols-[1fr_320px] lg:gap-12">
         <div>
-          <SectionHeading eyebrow="Profil Perusahaan" title={site.company} desc="Sebagai distributor profesional alat kesehatan resmi, kami menghadirkan rangkaian produk premium dengan standar klinis internasional yang ketat." />
-          <ul class="mt-6 grid gap-3 sm:grid-cols-3">
-            <li class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"><strong>✓</strong> Kualitas Medis Premium</li>
-            <li class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"><strong>✓</strong> Distribusi Resmi & Legal</li>
-            <li class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"><strong>✓</strong> Dukungan Layanan Profesional</li>
-          </ul>
+          <SectionHeading eyebrow="Tentang kami" title="Legalitas yang bisa diverifikasi" desc="Galamed adalah merek distribusi dari PT Galunggung Perkasa Husada, dengan izin distribusi alat kesehatan resmi dan Sertifikat Cara Distribusi yang Baik (CDAKB). Nomor izin tercantum di bawah ini untuk keperluan verifikasi pengadaan." />
+          <div class="mt-8 grid gap-5 sm:grid-cols-2">
+            <a
+              href="/images/IDAK%20PT%20Galunggung%20Perkasa%20Husada.pdf.png"
+              target="_blank"
+              rel="noopener"
+              aria-label="Buka sertifikat IDAK asli (gambar penuh)"
+              title="Buka sertifikat IDAK asli (gambar penuh)"
+              class="group block"
+            >
+              <span class="block overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:shadow-md">
+                <img
+                  src="/images/deriv/idak-top.webp"
+                  alt="Halaman atas sertifikat IDAK PT Galunggung Perkasa Husada"
+                  width="640"
+                  height="407"
+                  loading="lazy"
+                  class="w-full"
+                />
+              </span>
+              <span class="mt-3 block text-sm font-semibold text-navy-800 transition-colors group-hover:text-brand-700">Izin Distribusi Alat Kesehatan (IDAK)</span>
+              <span class="mt-1 block font-mono text-xs tabular-nums tracking-wide text-slate-600">No. 23032300096620005</span>
+            </a>
+            <a
+              href="/images/CDB-CDAKB%20PT%20Galunggung%20Perkasa%20Husada.pdf.png"
+              target="_blank"
+              rel="noopener"
+              aria-label="Buka sertifikat CDAKB asli (gambar penuh)"
+              title="Buka sertifikat CDAKB asli (gambar penuh)"
+              class="group block"
+            >
+              <span class="block overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:shadow-md">
+                <img
+                  src="/images/deriv/cdakb-top.webp"
+                  alt="Halaman atas sertifikat Cara Distribusi yang Baik PT Galunggung Perkasa Husada"
+                  width="640"
+                  height="407"
+                  loading="lazy"
+                  class="w-full"
+                />
+              </span>
+              <span class="mt-3 block text-sm font-semibold text-navy-800 transition-colors group-hover:text-brand-700">Sertifikat Cara Distribusi yang Baik (CDAKB)</span>
+              <span class="mt-1 block font-mono text-xs tabular-nums tracking-wide text-slate-600">No. PB UMKU 230323000966200050001</span>
+            </a>
+          </div>
+          <p class="mt-4 text-xs text-slate-500">Klik gambar untuk membuka dokumen asli.</p>
+          <p class="mt-6 text-sm leading-relaxed text-slate-600">
+            Nomor Induk Berusaha <strong class="font-semibold text-navy-800">(NIB) 2303230009662</strong> — terdaftar di sistem OSS dan berstatus telah terverifikasi.
+          </p>
         </div>
         <div class="rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
           <img src="/legacy/logo-gph.webp" alt="PT Galunggung Perkasa Husada logo" width="637" height="622" class="mx-auto h-40 w-40 rounded-full object-cover" loading="lazy" />
           <p class="mt-4 text-sm font-semibold text-navy-800">{site.company}</p>
-          <p class="text-xs text-slate-500">Logo korporat asli dari situs lama</p>
+          <p class="mt-1 text-xs text-slate-500">Terdaftar pada sistem OSS sejak 2023</p>
         </div>
       </div>
     </section>
 
     <section id="products" class="scroll-mt-24">
-      <SectionHeading eyebrow="Katalog Resmi" title="Produk Konsumabel Medis" desc="Rangkaian kasa hidrofil berkualitas medis: lipat, lembaran, roll, hingga big gauze. Tersedia dalam kemasan besar untuk kebutuhan instansi." />
+      <SectionHeading eyebrow="Katalog" title="Produk konsumabel medis" desc="Kasa hidrofil lengkap dalam semua bentuk: lipat, lembaran, roll, roll gauze, depper, tampon, hingga big gauze. Ukuran dan isi kemasan bisa dibuat menyesuaikan pesanan Anda." />
       <div class="mt-6 flex flex-col gap-3 md:flex-row md:items-center">
         <input
           id="product-search"
           type="search"
-          placeholder="Cari produk… (cth: kasa hidrofil)"
-          class="min-h-[44px] w-full rounded-lg border border-slate-300 px-4 py-2 text-[15px] focus:border-brand-500 focus:outline-none md:max-w-sm"
+          placeholder="Cari produk… (mis: roll gauze)"
+          class="min-h-[44px] w-full rounded-lg border border-slate-300 px-4 py-2 text-base focus:border-brand-500 focus:outline-none md:max-w-sm"
         />
         {categories.length > 2 && (
           <div id="product-filters" class="flex flex-wrap gap-2">
@@ -141,12 +186,12 @@ const categories = ['Semua', ...new Set(products.map((p) => p.category))];
     </section>
 
     <section id="layanan" class="scroll-mt-24">
-      <SectionHeading eyebrow="Layanan Pengadaan" title="Cara Order untuk Instansi Medis" />
+      <SectionHeading eyebrow="Layanan" title="Cara pemesanan untuk fasilitas kesehatan & distributor" />
       <ol class="mt-6 grid gap-4 md:grid-cols-4">
-        <li class="rounded-xl border p-5"><strong>1. Konsultasi</strong><br /><span class="text-sm text-slate-600">Chat WA / email kebutuhan.</span></li>
-        <li class="rounded-xl border p-5"><strong>2. Penawaran</strong><br /><span class="text-sm text-slate-600">Quotation resmi cepat.</span></li>
-        <li class="rounded-xl border p-5"><strong>3. Pengiriman</strong><br /><span class="text-sm text-slate-600">Distribusi aman & terdokumentasi.</span></li>
-        <li class="rounded-xl border p-5"><strong>4. After-sales</strong><br /><span class="text-sm text-slate-600">Dukungan produk profesional.</span></li>
+        <li class="rounded-xl border p-5"><strong>1. Konsultasi kebutuhan</strong><br /><span class="text-sm text-slate-600">Ceritakan jenis, ukuran, dan jumlah yang Anda butuhkan via WhatsApp atau email — dibalas pada jam kerja.</span></li>
+        <li class="rounded-xl border p-5"><strong>2. Penawaran resmi</strong><br /><span class="text-sm text-slate-600">Kami kirimkan penawaran sesuai spesifikasi: ukuran dan isi kemasan bisa dibuat menyesuaikan pesanan Anda.</span></li>
+        <li class="rounded-xl border p-5"><strong>3. Pengiriman terdokumentasi</strong><br /><span class="text-sm text-slate-600">Pesanan dikirim aman dengan dokumentasi lengkap sampai barang diterima di lokasi Anda.</span></li>
+        <li class="rounded-xl border p-5"><strong>4. Dukungan lanjutan</strong><br /><span class="text-sm text-slate-600">Pertanyaan produk atau pesanan berikutnya bisa dilanjutkan lewat jalur yang sama.</span></li>
       </ol>
     </section>
 
