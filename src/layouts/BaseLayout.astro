@@ -15,7 +15,9 @@ const {
 // Izin Distribusi Alat Kesehatan (IDAK) - PT Galunggung Perkasa Husada, terverifikasi OSS.
 // Full certificate: public/images/IDAK PT Galunggung Perkasa Husada.pdf.png
 const idakNumber = '23032300096620005';
-const canonical = 'https://galamed.id/';
+// Per-page canonical derived from the real URL. A hardcoded '/…' here would
+// silently canonicalize every future page (products, articles) to the homepage.
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = 'https://galamed.id/legacy/ss-galamed.webp';
 
 const structuredData = {
