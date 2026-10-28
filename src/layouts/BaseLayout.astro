@@ -101,6 +101,11 @@ const structuredData = {
     <meta property="og:image" content={ogImageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
 
+    <!-- Machine-readable briefs for AI agents (llmstxt.org). Linked here because
+         discovery files are only fetched when something points to them. -->
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Ringkasan Galamed untuk AI (llms.txt)" />
+    <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Isi lengkap situs Galamed untuk AI (llms-full.txt)" />
+
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
     <!-- Google Search Console: paste your verification code here after creating the property.
@@ -149,6 +154,7 @@ const structuredData = {
               <li><a href="#products" class="text-slate-300 transition hover:text-brand-200">Produk</a></li>
               <li><a href="#layanan" class="text-slate-300 transition hover:text-brand-200">Layanan</a></li>
               <li><a href="#contact" class="text-slate-300 transition hover:text-brand-200">Hubungi kami</a></li>
+              <li><a href="/llms.txt" class="text-slate-300 transition hover:text-brand-200" target="_blank" rel="noopener">Galamed untuk AI</a></li>
             </ul>
           </nav>
           <div>
