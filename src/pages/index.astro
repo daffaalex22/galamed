@@ -12,9 +12,30 @@ const products = [...entries]
   .map((e) => ({ ...e.data, slug: e.id.replace(/^\d+-/, '') }));
 
 const categories = ['Semua', ...new Set(products.map((p) => p.category))];
+
+// Catalog schema: tells Google the page lists these products, each with its
+// own detail page (Product nodes are fully marked up on the detail pages).
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Katalog produk konsumabel medis Galamed',
+  itemListElement: products.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Product',
+      name: p.name,
+      url: new URL(`/produk/${p.slug}/`, Astro.site).href,
+      image: new URL(p.image, Astro.site).href,
+      category: p.category,
+      brand: { '@type': 'Brand', name: site.brand },
+    },
+  })),
+};
 ---
 
 <BaseLayout>
+  <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   <header id="home" class="bg-brand-50">
     <div class="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
       <div>

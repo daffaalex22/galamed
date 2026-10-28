@@ -22,36 +22,62 @@ const idakNumber = '23032300096620005';
 // silently canonicalize every future page (products, articles) to the homepage.
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImageUrl = new URL(ogImage, Astro.site).href;
-const logoUrl = 'https://galamed.id/legacy/ss-galamed.webp';
+// Square logo mark — schema.org logo should be a recognizable square-ish mark,
+// not a wide banner or page screenshot. Also used as the favicon.
+const logoUrl = 'https://galamed.id/legacy/logo-mark.png';
 
+// Site-wide entity graph: the distributing business (LocalBusiness so Google's
+// local systems read address/hours/phone) + the WebSite node referencing it.
+// Hours are hardcoded to match site.json ("Senin–Jumat 08.00–17.00 WIB").
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: site.company,
-  alternateName: site.brand,
-  url: canonical,
-  logo: logoUrl,
-  email: site.email,
-  telephone: `+${site.waNumber}`,
-  description: `Distributor alat kesehatan resmi (IDAK No. ${idakNumber}): kasa hidrofil lengkap untuk fasilitas kesehatan & distributor.`,
-  contactPoint: [
+  '@graph': [
     {
-      '@type': 'ContactPoint',
-      contactType: 'sales',
-      telephone: `+${site.waNumber}`,
+      '@type': 'LocalBusiness',
+      '@id': 'https://galamed.id/#organization',
+      name: site.company,
+      alternateName: site.brand,
+      url: canonical,
+      logo: logoUrl,
       email: site.email,
-      availableLanguage: 'id',
+      telephone: `+${site.waNumber}`,
+      description: `Distributor alat kesehatan resmi (IDAK No. ${idakNumber}): kasa hidrofil lengkap untuk fasilitas kesehatan & distributor.`,
+      ...(site.address
+        ? {
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: site.address,
+              addressCountry: 'ID',
+            },
+          }
+        : {}),
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '08:00',
+          closes: '17:00',
+        },
+      ],
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          contactType: 'sales',
+          telephone: `+${site.waNumber}`,
+          email: site.email,
+          availableLanguage: 'id',
+        },
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://galamed.id/#website',
+      url: 'https://galamed.id/',
+      name: site.brand,
+      inLanguage: 'id-ID',
+      publisher: { '@id': 'https://galamed.id/#organization' },
     },
   ],
-  ...(site.address
-    ? {
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: site.address,
-          addressCountry: 'ID',
-        },
-      }
-    : {}),
 };
 ---
 
@@ -97,7 +123,7 @@ const structuredData = {
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="/legacy/Logo%20Galamed%20No%20Text.png" />
+    <link rel="icon" type="image/png" href="/legacy/logo-mark.png" />
   </head>
   <body class="bg-white text-slate-900 antialiased">
     <Navbar brand={site.brand} waLink={site.waLink} />
