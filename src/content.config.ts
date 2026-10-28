@@ -11,6 +11,9 @@ const products = defineCollection({
     desc: z.string(),
     category: z.enum(['Kasa & Kapas', 'Perawatan Luka', 'Antiseptik']),
     image: z.string().default('/legacy/sterile.webp'),
+    // Standar ukuran produk (mis. "5x5 cm"). Opsional — hanya diisi bila ada
+    // ukuran standar yang konkrit; dipakai di Product schema (additionalProperty).
+    ukuran: z.string().optional(),
   }),
 });
 

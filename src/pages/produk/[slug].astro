@@ -53,6 +53,19 @@ const faq = [
   },
 ];
 
+// Product schema enriched with concrete, verifiable facts (size, customization)
+// so AI systems can quote specifics instead of generic feature names.
+const additionalProperties = [
+  ...(product.ukuran
+    ? [{ '@type': 'PropertyValue', name: 'Ukuran standar', value: product.ukuran }]
+    : []),
+  {
+    '@type': 'PropertyValue',
+    name: 'Kustomisasi',
+    value: 'Ukuran dan isi kemasan bisa dibuat menyesuaikan pesanan',
+  },
+];
+
 const productSchema = {
   '@context': 'https://schema.org',
   '@type': 'Product',
@@ -62,6 +75,7 @@ const productSchema = {
   category: product.category,
   brand: { '@type': 'Brand', name: site.brand },
   manufacturer: { '@type': 'Organization', name: site.company },
+  additionalProperty: additionalProperties,
 };
 
 const breadcrumbSchema = {

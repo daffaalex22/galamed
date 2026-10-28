@@ -32,13 +32,8 @@ collections:
       - { label: 'Nama Produk', name: name, widget: string, hint: 'cth: Sterile Gauze (Kasa Steril)' }
       - { label: 'Ringkasan singkat', name: short, widget: string, hint: '1 kalimat: bentuk + ukuran. Dipakai sebagai subjudul & deskripsi meta halaman produk.' }
       - { label: 'Deskripsi kartu', name: desc, widget: text, hint: '1-2 kalimat untuk kartu produk di beranda: bentuk, ukuran, kemasan, pemakaian' }
-      - label: 'Kategori'
-        name: category
-        widget: select
-        options:
-          - 'Kasa & Kapas'
-          - 'Perawatan Luka'
-          - 'Antiseptik'
+      - { label: 'Kategori', name: category, widget: select, options: ['Kasa & Kapas', 'Perawatan Luka', 'Antiseptik'] }
+      - { label: 'Ukuran standar (opsional)', name: ukuran, widget: string, required: false, hint: 'cth: 5x5 cm (standar). Kosongkan bila tidak ada ukuran standar. Dipakai di data terstruktur Product.' }
       - { label: 'Foto Produk', name: image, widget: image, hint: 'Otomatis tersimpan di /images/products. JPG/PNG/WebP. Dikompres otomatis saat build.' }
       - label: 'Isi halaman produk'
         name: body
