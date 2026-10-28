@@ -14,6 +14,9 @@ const products = defineCollection({
     // Standar ukuran produk (mis. "5x5 cm"). Opsional — hanya diisi bila ada
     // ukuran standar yang konkrit; dipakai di Product schema (additionalProperty).
     ukuran: z.string().optional(),
+    // Tanggal konten terakhir diperbarui. Tampil sebagai "Terakhir diperbarui"
+    // dan dipakai sebagai dateModified di Product schema (sinyal freshness).
+    updated: z.date().optional(),
   }),
 });
 

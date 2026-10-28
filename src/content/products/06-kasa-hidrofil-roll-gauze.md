@@ -1,9 +1,10 @@
----
+﻿---
 name: Kasa Hidrofil Roll Gauze
 short: Kasa hidrofil balutan gulung
 desc: Balutan gulung dengan daya serap tinggi untuk menyerap cairan dan darah saat prosedur bedah. Tersedia beragam ukuran yang disesuaikan untuk tiap tindakan operasi.
 category: Kasa & Kapas
 image: /images/products/kasa-hidrofil-roll-gauze.jpg
+updated: 2026-10-29
 ---
 
 Kasa hidrofil roll gauze adalah kasa balutan yang digulung memanjang, dengan daya serap tinggi untuk menyerap cairan dan darah saat prosedur bedah. Tersedia beragam ukuran yang disesuaikan untuk tiap tindakan operasi.
@@ -14,7 +15,7 @@ Berbeda dengan kasa roll polos yang dipotong sesuai kebutuhan, roll gauze dipaka
 
 ## Kapan memilih roll gauze dibanding bentuk lain?
 
-Roll gauze adalah pilihan untuk pembalutan melingkar — bentuk lain tidak bisa menggantikan fungsinya. Untuk menutup luka datar, gunakan lembaran atau lipat; untuk kebutuhan menyerap cairan dalam jumlah besar di kamar operasi, big gauze lebih sesuai. Fasilitas yang lengkap biasanya menyimpan keduanya.
+Roll gauze adalah pilihan untuk pembalutan melingkar â€” bentuk lain tidak bisa menggantikan fungsinya. Untuk menutup luka datar, gunakan lembaran atau lipat; untuk kebutuhan menyerap cairan dalam jumlah besar di kamar operasi, big gauze lebih sesuai. Fasilitas yang lengkap biasanya menyimpan keduanya.
 
 ## Cara memesan
 

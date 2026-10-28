@@ -1,9 +1,10 @@
----
+﻿---
 name: Kasa Hidrofil Big Gauze
 short: Kasa hidrofil ukuran besar
 desc: Dimensi besar dirancang untuk menyerap cairan dan darah dengan daya serap tinggi pada prosedur bedah besar.
 category: Kasa & Kapas
 image: /images/products/kasa-hidrofil-big-gauze.jpg
+updated: 2026-10-29
 ---
 
 Kasa hidrofil big gauze adalah kasa berdimensi besar dengan daya serap tinggi, dirancang khusus untuk menyerap cairan dan darah pada prosedur bedah besar.
@@ -14,7 +15,7 @@ Di kamar operasi, volume cairan yang harus dikelola jauh lebih besar daripada pe
 
 ## Kapan memilih big gauze dibanding bentuk lain?
 
-Big gauze dipakai ketika ukuran dan penyerapan kasa biasa tidak lagi memadai — untuk bedah besar dengan area operasi luas. Untuk tindakan kecil, bentuk tampon sudah cukup untuk penyerapan terarah; untuk perawatan luka harian, lipat dan lembaran lebih ekonomis. Kamar operasi umum menyediakan keduanya sesuai jenis prosedur.
+Big gauze dipakai ketika ukuran dan penyerapan kasa biasa tidak lagi memadai â€” untuk bedah besar dengan area operasi luas. Untuk tindakan kecil, bentuk tampon sudah cukup untuk penyerapan terarah; untuk perawatan luka harian, lipat dan lembaran lebih ekonomis. Kamar operasi umum menyediakan keduanya sesuai jenis prosedur.
 
 ## Cara memesan
 
