@@ -3,4 +3,4 @@ Allow: /
 # Keep the Decap CMS admin UI (has noindex meta as well) out of search results.
 Disallow: /admin
 
-Sitemap: https://galamed.id/sitemap.xml
+Sitemap: https://galamed.id/sitemap-index.xml
