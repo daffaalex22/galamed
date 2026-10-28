@@ -37,7 +37,11 @@ const structuredData = {
       '@id': 'https://galamed.id/#organization',
       name: site.company,
       alternateName: site.brand,
-      url: canonical,
+      // The organization node is shared across all pages via @id, so its url
+      // must be a single stable value (the homepage) — not the per-page
+      // canonical, which would make the same entity claim a different URL
+      // on every product page.
+      url: 'https://galamed.id/',
       logo: logoUrl,
       email: site.email,
       telephone: `+${site.waNumber}`,
