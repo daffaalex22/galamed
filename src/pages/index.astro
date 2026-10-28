@@ -7,7 +7,9 @@ import { site } from '../data/site';
 import { getCollection } from 'astro:content';
 
 const entries = await getCollection('products');
-const products = [...entries].sort((a, b) => a.id.localeCompare(b.id)).map((e) => e.data);
+const products = [...entries]
+  .sort((a, b) => a.id.localeCompare(b.id))
+  .map((e) => ({ ...e.data, slug: e.id.replace(/^\d+-/, '') }));
 
 const categories = ['Semua', ...new Set(products.map((p) => p.category))];
 ---

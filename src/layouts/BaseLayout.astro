@@ -7,10 +7,13 @@ import { site } from '../data/site';
 interface Props {
   title?: string;
   description?: string;
+  /** Override for detail pages: site-absolute or root-relative image URL. */
+  ogImage?: string;
 }
 const {
   title = 'Galamed - Distributor Kasa Hidrofil & Konsumabel Medis',
   description = 'Distributor kasa hidrofil dari PT Galunggung Perkasa Husada (memegang IDAK & sertifikat CDAKB) untuk rumah sakit, apotek, dan distributor. Minta penawaran via WhatsApp.',
+  ogImage = 'https://galamed.id/legacy/ss-galamed.webp',
 } = Astro.props;
 // Izin Distribusi Alat Kesehatan (IDAK) - PT Galunggung Perkasa Husada, terverifikasi OSS.
 // Full certificate: public/images/IDAK PT Galunggung Perkasa Husada.pdf.png
@@ -18,7 +21,8 @@ const idakNumber = '23032300096620005';
 // Per-page canonical derived from the real URL. A hardcoded '/…' here would
 // silently canonicalize every future page (products, articles) to the homepage.
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const ogImage = 'https://galamed.id/legacy/ss-galamed.webp';
+const ogImageUrl = new URL(ogImage, Astro.site).href;
+const logoUrl = 'https://galamed.id/legacy/ss-galamed.webp';
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -26,7 +30,7 @@ const structuredData = {
   name: site.company,
   alternateName: site.brand,
   url: canonical,
-  logo: ogImage,
+  logo: logoUrl,
   email: site.email,
   telephone: `+${site.waNumber}`,
   description: `Distributor alat kesehatan resmi (IDAK No. ${idakNumber}): kasa hidrofil lengkap untuk fasilitas kesehatan & distributor.`,
@@ -68,7 +72,7 @@ const structuredData = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
 
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
