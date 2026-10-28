@@ -141,7 +141,7 @@ const structuredData = {
       <div class="mx-auto max-w-6xl px-6 py-12">
         <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.1fr_1.2fr]">
           <div>
-            <a href="#home" class="inline-flex rounded-xl bg-white px-4 py-2 shadow-sm" aria-label="Ke beranda">
+            <a href="/" class="inline-flex rounded-xl bg-white px-4 py-2 shadow-sm" aria-label="Ke beranda">
               <img src="/legacy/logo-galamed.png" alt="Galamed" width="1471" height="287" class="h-8 w-auto object-contain" loading="lazy" />
             </a>
             <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
@@ -152,12 +152,14 @@ const structuredData = {
           </div>
           <nav aria-label="Tautan cepat">
             <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-200">Tautan cepat</p>
+            <!-- Root-relative paths (not bare #anchors): the anchors only exist on
+                 the homepage, so on product pages these would be dead links. -->
             <ul class="mt-4 grid gap-2 text-sm">
-              <li><a href="#home" class="text-slate-300 transition hover:text-brand-200">Beranda</a></li>
-              <li><a href="#about" class="text-slate-300 transition hover:text-brand-200">Tentang kami</a></li>
-              <li><a href="#products" class="text-slate-300 transition hover:text-brand-200">Produk</a></li>
-              <li><a href="#layanan" class="text-slate-300 transition hover:text-brand-200">Layanan</a></li>
-              <li><a href="#contact" class="text-slate-300 transition hover:text-brand-200">Hubungi kami</a></li>
+              <li><a href="/" class="text-slate-300 transition hover:text-brand-200">Beranda</a></li>
+              <li><a href="/#about" class="text-slate-300 transition hover:text-brand-200">Tentang kami</a></li>
+              <li><a href="/#products" class="text-slate-300 transition hover:text-brand-200">Produk</a></li>
+              <li><a href="/#layanan" class="text-slate-300 transition hover:text-brand-200">Layanan</a></li>
+              <li><a href="/#contact" class="text-slate-300 transition hover:text-brand-200">Hubungi kami</a></li>
               <li><a href="/llms.txt" class="text-slate-300 transition hover:text-brand-200" target="_blank" rel="noopener">Galamed untuk AI</a></li>
             </ul>
           </nav>
