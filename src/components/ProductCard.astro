@@ -7,6 +7,8 @@ interface Product {
   desc: string;
   category: string;
   image: string;
+  /** URL slug — detail page at /produk/{slug}/ */
+  slug: string;
 }
 interface Props {
   product: Product;
@@ -19,21 +21,25 @@ const waLinkProduct = `https://wa.me/${site.waNumber}?text=${encodeURIComponent(
   class="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
 >
   <div class="relative aspect-square overflow-hidden border-b border-slate-100 bg-gradient-to-b from-brand-50/80 via-white to-white">
-    <img
-      src={product.image}
-      alt={product.name}
-      loading="lazy"
-      width="700"
-      height="700"
-      class="absolute inset-0 h-full w-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
-    />
+    <a href={`/produk/${product.slug}/`} class="absolute inset-0" tabindex="-1" aria-hidden="true">
+      <img
+        src={product.image}
+        alt={product.name}
+        loading="lazy"
+        width="700"
+        height="700"
+        class="absolute inset-0 h-full w-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
+      />
+    </a>
     <span class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-brand-800 shadow-sm backdrop-blur">
       {product.category}
     </span>
   </div>
   <div class="flex grow flex-col p-5">
     <h3 class="font-semibold leading-snug text-navy-800 transition-colors group-hover:text-brand-700">
-      {product.name}
+      <a href={`/produk/${product.slug}/`} class="transition-colors group-hover:text-brand-700">
+        {product.name}
+      </a>
     </h3>
     <p class="mt-2 text-sm leading-relaxed text-slate-600">{product.desc}</p>
     <div class="mt-auto pt-3">

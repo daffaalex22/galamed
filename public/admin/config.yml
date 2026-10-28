@@ -30,7 +30,8 @@ collections:
       preview: false
     fields:
       - { label: 'Nama Produk', name: name, widget: string, hint: 'cth: Sterile Gauze (Kasa Steril)' }
-      - { label: 'Deskripsi', name: desc, widget: text, hint: '1-2 kalimat untuk kartu produk: bentuk, ukuran, kemasan, pemakaian' }
+      - { label: 'Ringkasan singkat', name: short, widget: string, hint: '1 kalimat: bentuk + ukuran. Dipakai sebagai subjudul & deskripsi meta halaman produk.' }
+      - { label: 'Deskripsi kartu', name: desc, widget: text, hint: '1-2 kalimat untuk kartu produk di beranda: bentuk, ukuran, kemasan, pemakaian' }
       - label: 'Kategori'
         name: category
         widget: select
@@ -38,7 +39,11 @@ collections:
           - 'Kasa & Kapas'
           - 'Perawatan Luka'
           - 'Antiseptik'
-      - { label: 'Foto Produk', name: image, widget: image, hint: 'Otomatis tersimpan di /images/products. JPG/PNG/WebP.' }
+      - { label: 'Foto Produk', name: image, widget: image, hint: 'Otomatis tersimpan di /images/products. JPG/PNG/WebP. Dikompres otomatis saat build.' }
+      - label: 'Isi halaman produk'
+        name: body
+        widget: markdown
+        hint: 'Konten panjang halaman /produk/…. Gunakan Heading 2 (H2) untuk judul bagian. Akhiri dengan kalimat ukuran & kemasan custom. Konten baru tampil di situs setelah build selesai.'
 
   - name: settings
     label: Pengaturan Situs
