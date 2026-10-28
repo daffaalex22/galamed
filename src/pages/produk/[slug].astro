@@ -73,11 +73,24 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 3, name: product.name },
   ],
 };
+
+// Same data renders the visible FAQ section and this schema — edit once,
+// both update. Answers here are cautious (no unverified medical claims).
+const faqPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
 ---
 
 <BaseLayout title={title} description={description} ogImage={product.image}>
   <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqPageSchema)} />
 
   <main class="mx-auto max-w-6xl px-6 py-12">
     <nav aria-label="Breadcrumb" class="text-sm text-slate-500">

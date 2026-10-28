@@ -32,10 +32,53 @@ const itemListSchema = {
     },
   })),
 };
+
+// Homepage FAQ: company/purchasing-level questions only (product-level FAQs
+// live on the detail pages — no duplicated content across pages). Every answer
+// below is verifiable from site facts (IDAK/CDAKB, jam layanan, alamat) —
+// nothing here may claim steril status, coverage area, prices, or minimum
+// quantities until the client confirms them in writing.
+const faq = [
+  {
+    q: 'Apakah Galamed distributor alat kesehatan resmi?',
+    a: 'Ya. Galamed adalah merek distribusi dari PT Galunggung Perkasa Husada, pemegang Izin Distribusi Alat Kesehatan (IDAK No. 23032300096620005, terverifikasi OSS) dan Sertifikat CDAKB. Kedua dokumen bisa dilihat dan dibuka satu per satu di bagian "Tentang kami" di atas.',
+  },
+  {
+    q: 'Bagaimana cara meminta penawaran?',
+    a: 'Klik tombol WhatsApp di situs ini atau isi formulir "Minta penawaran resmi" — WhatsApp akan terbuka dengan pesan yang sudah terisi otomatis. Penawaran resmi dikirim pada jam layanan: Senin–Jumat 08.00–17.00 WIB.',
+  },
+  {
+    q: 'Apakah ada minimal order?',
+    a: 'Kebutuhan setiap pembeli berbeda — rumah sakit, klinik, puskesmas, apotek, dan distributor tidak memesan dalam jumlah yang sama. Sampaikan perkiraan kebutuhan Anda via WhatsApp, lalu kami susun penawarannya.',
+  },
+  {
+    q: 'Bisakah memesan ukuran atau kemasan khusus?',
+    a: 'Bisa. Ukuran dan isi kemasan bisa dibuat menyesuaikan pesanan Anda — sampaikan spesifikasinya saat konsultasi awal via WhatsApp atau email.',
+  },
+  {
+    q: 'Bagaimana pengirimannya?',
+    a: 'Pesanan dikirim dengan dokumentasi lengkap sampai barang diterima di lokasi Anda. Untuk cakupan area dan estimasi waktu pengiriman, konfirmasikan bersama kebutuhan Anda via WhatsApp.',
+  },
+  {
+    q: 'Di mana kantor Galamed berada?',
+    a: `Kami berada di ${site.address}. Alamat lengkap dan kontak juga tercantum di bagian bawah setiap halaman situs ini.`,
+  },
+];
+
+const faqPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
 ---
 
 <BaseLayout>
   <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqPageSchema)} />
   <header id="home" class="bg-brand-50">
     <div class="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
       <div>
@@ -216,6 +259,22 @@ const itemListSchema = {
         <li class="rounded-xl border p-5"><strong>3. Pengiriman terdokumentasi</strong><br /><span class="text-sm text-slate-600">Pesanan dikirim aman dengan dokumentasi lengkap sampai barang diterima di lokasi Anda.</span></li>
         <li class="rounded-xl border p-5"><strong>4. Dukungan lanjutan</strong><br /><span class="text-sm text-slate-600">Pertanyaan produk atau pesanan berikutnya bisa dilanjutkan lewat jalur yang sama.</span></li>
       </ol>
+    </section>
+
+    <section id="faq" class="scroll-mt-24">
+      <SectionHeading
+        eyebrow="FAQ"
+        title="Pertanyaan yang sering diajukan"
+        desc="Belum menemukan jawaban yang dicari? Hubungi kami via WhatsApp — dibalas pada jam kerja."
+      />
+      <div class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {faq.map((item) => (
+          <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 class="font-semibold leading-snug text-navy-800">{item.q}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{item.a}</p>
+          </div>
+        ))}
+      </div>
     </section>
 
     <section id="contact" class="scroll-mt-24">

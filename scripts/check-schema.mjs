@@ -27,6 +27,8 @@ function check(file) {
       if (prod) console.log(`    Product: ${prod.name} | image=${prod.image}`);
       const bc = nodes.find((n) => n['@type'] === 'BreadcrumbList');
       if (bc) console.log(`    Breadcrumb: ${bc.itemListElement.map((x) => x.name).join(' > ')}`);
+      const fp = nodes.find((n) => n['@type'] === 'FAQPage');
+      if (fp) console.log(`    FAQPage: ${fp.mainEntity.length} questions, first="${fp.mainEntity[0].name}"`);
     } catch (e) {
       console.log(`  INVALID JSON: ${e.message}`);
     }
