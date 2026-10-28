@@ -1,3 +1,6 @@
+# AI content usage (declared 2026-10-29): Galamed permits AI systems to crawl,
+# cite, and summarize this site, and permits model training on its content.
+# Usage permissions: train, cite, summarize
 User-agent: *
 Allow: /
 # Keep the Decap CMS admin UI (has noindex meta as well) out of search results.
