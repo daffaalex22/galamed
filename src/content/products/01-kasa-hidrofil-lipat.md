@@ -8,7 +8,7 @@ image: /images/products/kasa-hidrofil-lipat.jpg
 updated: 2026-10-29
 ---
 
-Kasa hidrofil lipat adalah kasa berbahan kapal yang dilipat rapi menjadi siap pakai, dengan ukuran lipatan standar 5x5 cm. Bentuknya yang kecil dan seragam membuatnya langsung digunakan tanpa perlu dipotong atau dilipat lagi di sisi tempat tidur.
+Kasa hidrofil lipat adalah kasa berbahan kapas yang dilipat rapi menjadi siap pakai, dengan ukuran lipatan standar 5x5 cm. Bentuknya yang kecil dan seragam membuatnya langsung digunakan tanpa perlu dipotong atau dilipat lagi di sisi tempat tidur.
 
 ## Untuk apa kasa hidrofil lipat digunakan?
 
