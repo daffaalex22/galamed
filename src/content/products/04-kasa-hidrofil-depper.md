@@ -8,7 +8,7 @@ image: /images/products/kasa-hidrofil-depper.jpg
 updated: 2026-10-29
 ---
 
-Kasa depper adalah kasa berbentuk kecil (dari bahasa Belanda *depper*) ukuran S â€” gumpalan kasa kompak yang jadi perlengkapan wajib di lunch box dan troler perawatan. Ukurannya kecil, tetapi frekuensi pemakaiannya paling tinggi di antara bentuk kasa lain.
+Kasa depper adalah kasa berbentuk kecil (dari bahasa Belanda *depper*) ukuran S — gumpalan kasa kompak yang jadi perlengkapan wajib di lunch box dan troler perawatan. Ukurannya kecil, tetapi frekuensi pemakaiannya paling tinggi di antara bentuk kasa lain.
 
 ## Untuk apa kasa depper digunakan?
 
@@ -16,7 +16,7 @@ Bentuk kecil yang padat membuat depper praktis untuk mengambil, mengusap (swab),
 
 ## Kapan memilih depper dibanding bentuk lain?
 
-Depper menggantikan pekerjaan melipat kasa lembaran menjadi bola di sisi tempat â€” yang sering kali tidak seragam dan boros waktu. Untuk perawatan luka besar atau pembalutan, gunakan bentuk lipat atau lembaran; untuk pembersihan presisi di area kecil, depper jauh lebih efisien.
+Depper menggantikan pekerjaan melipat kasa lembaran menjadi bola di sisi tempat — yang sering kali tidak seragam dan boros waktu. Untuk perawatan luka besar atau pembalutan, gunakan bentuk lipat atau lembaran; untuk pembersihan presisi di area kecil, depper jauh lebih efisien.
 
 ## Cara memesan
 

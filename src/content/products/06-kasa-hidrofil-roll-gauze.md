@@ -15,7 +15,7 @@ Berbeda dengan kasa roll polos yang dipotong sesuai kebutuhan, roll gauze dipaka
 
 ## Kapan memilih roll gauze dibanding bentuk lain?
 
-Roll gauze adalah pilihan untuk pembalutan melingkar â€” bentuk lain tidak bisa menggantikan fungsinya. Untuk menutup luka datar, gunakan lembaran atau lipat; untuk kebutuhan menyerap cairan dalam jumlah besar di kamar operasi, big gauze lebih sesuai. Fasilitas yang lengkap biasanya menyimpan keduanya.
+Roll gauze adalah pilihan untuk pembalutan melingkar — bentuk lain tidak bisa menggantikan fungsinya. Untuk menutup luka datar, gunakan lembaran atau lipat; untuk kebutuhan menyerap cairan dalam jumlah besar di kamar operasi, big gauze lebih sesuai. Fasilitas yang lengkap biasanya menyimpan keduanya.
 
 ## Cara memesan
 

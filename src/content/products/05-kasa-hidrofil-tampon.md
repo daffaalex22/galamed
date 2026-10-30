@@ -7,11 +7,11 @@ image: /images/products/kasa-hidrofil-tampon.jpg
 updated: 2026-10-29
 ---
 
-Kasa hidrofil tampon berbentuk padat memanjang yang dirancang khusus untuk tamponade â€” menekan dan menyerap cairan pada rongga atau celah tubuh saat tindakan medis. Bentuk ini tidak ditemukan pada kasa lembaran maupun roll: ia dibentuk pabrik, bukan digulung manual.
+Kasa hidrofil tampon berbentuk padat memanjang yang dirancang khusus untuk tamponade — menekan dan menyerap cairan pada rongga atau celah tubuh saat tindakan medis. Bentuk ini tidak ditemukan pada kasa lembaran maupun roll: ia dibentuk pabrik, bukan digulung manual.
 
 ## Untuk apa kasa hidrofil tampon digunakan?
 
-Pada tindakan prosedur, tenaga medis membutuhkan kasa yang bisa dimasukkan ke area kerja dengan ukuran dan bentuk yang konsisten â€” untuk menahan perdarahan, menyerap cairan, atau memisahkan jaringan. Bentuk tampon yang seragam memastikan setiap helai berukuran sama dan terhitung jelas sebelum serta sesudah tindakan, bagian penting dari SOP penghitungan kasa kamar operasi.
+Pada tindakan prosedur, tenaga medis membutuhkan kasa yang bisa dimasukkan ke area kerja dengan ukuran dan bentuk yang konsisten — untuk menahan perdarahan, menyerap cairan, atau memisahkan jaringan. Bentuk tampon yang seragam memastikan setiap helai berukuran sama dan terhitung jelas sebelum serta sesudah tindakan, bagian penting dari SOP penghitungan kasa kamar operasi.
 
 ## Kapan memilih bentuk tampon dibanding bentuk lain?
 

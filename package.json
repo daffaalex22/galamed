@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "cms": "decap-server",
-    "images": "node scripts/optimize-images.mjs"
+    "images": "node scripts/optimize-images.mjs",
+    "lint:content": "node scripts/scan-mojibake.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

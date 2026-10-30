@@ -15,7 +15,7 @@ Di kamar operasi, volume cairan yang harus dikelola jauh lebih besar daripada pe
 
 ## Kapan memilih big gauze dibanding bentuk lain?
 
-Big gauze dipakai ketika ukuran dan penyerapan kasa biasa tidak lagi memadai â€” untuk bedah besar dengan area operasi luas. Untuk tindakan kecil, bentuk tampon sudah cukup untuk penyerapan terarah; untuk perawatan luka harian, lipat dan lembaran lebih ekonomis. Kamar operasi umum menyediakan keduanya sesuai jenis prosedur.
+Big gauze dipakai ketika ukuran dan penyerapan kasa biasa tidak lagi memadai — untuk bedah besar dengan area operasi luas. Untuk tindakan kecil, bentuk tampon sudah cukup untuk penyerapan terarah; untuk perawatan luka harian, lipat dan lembaran lebih ekonomis. Kamar operasi umum menyediakan keduanya sesuai jenis prosedur.
 
 ## Cara memesan
 

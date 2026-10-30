@@ -8,7 +8,7 @@ image: /images/products/kasa-hidrofil-roll.jpg
 updated: 2026-10-29
 ---
 
-Kasa hidrofil roll berbentuk gulungan panjang dengan ukuran standar 80 cm x 40 yard. Satu gulungan mencakup panjang kasa dalam jumlah besar â€” format yang dirancang untuk fasilitas dengan pemakaian volume tinggi.
+Kasa hidrofil roll berbentuk gulungan panjang dengan ukuran standar 80 cm x 40 yard. Satu gulungan mencakup panjang kasa dalam jumlah besar — format yang dirancang untuk fasilitas dengan pemakaian volume tinggi.
 
 ## Untuk apa kasa hidrofil roll digunakan?
 
@@ -16,7 +16,7 @@ Format gulungan memberi keleluasaan penuh: kasa dipotong sepanjang yang dibutuhk
 
 ## Kapan memilih bentuk roll dibanding bentuk lain?
 
-Roll adalah pilihan ekonomis untuk volume besar karena minim limbah pemotongan dan fleksibel terhadap kebutuhan yang berubah. Kalau pemakaiannya justru seragam dan berulang, bentuk lipat atau lembaran yang siap pakai lebih menghemat waktu staf â€” dua format ini saling melengkapi di satu fasilitas, bukan saling menggantikan.
+Roll adalah pilihan ekonomis untuk volume besar karena minim limbah pemotongan dan fleksibel terhadap kebutuhan yang berubah. Kalau pemakaiannya justru seragam dan berulang, bentuk lipat atau lembaran yang siap pakai lebih menghemat waktu staf — dua format ini saling melengkapi di satu fasilitas, bukan saling menggantikan.
 
 ## Cara memesan
 

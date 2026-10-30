@@ -8,7 +8,7 @@ image: /images/products/kasa-hidrofil-lembaran.jpg
 updated: 2026-10-29
 ---
 
-Kasa hidrofil lembaran berbentuk helai persegi standar 10x10 cm dengan serat halus. Satu lembar bisa langsung dipakai utuh, dilipat, atau dipotong mengikuti bentuk dan ukuran luka â€” bentuk paling lentur di seluruh keluarga kasa hidrofil.
+Kasa hidrofil lembaran berbentuk helai persegi standar 10x10 cm dengan serat halus. Satu lembar bisa langsung dipakai utuh, dilipat, atau dipotong mengikuti bentuk dan ukuran luka — bentuk paling lentur di seluruh keluarga kasa hidrofil.
 
 ## Untuk apa kasa hidrofil lembaran digunakan?
 
@@ -16,7 +16,7 @@ Karena mudah dipotong dan dibentuk, kasa lembaran menjadi andalan di ruang peraw
 
 ## Kapan memilih bentuk lembaran dibanding bentuk lain?
 
-Pilih lembaran saat kebutuhannya beragam dan sulit diprediksi â€” satu kotak lembaran bisa menutup banyak jenis perawatan. Kalau tindakannya berulang dan seragam (misalnya luka yang sama tiap hari), bentuk lipat yang siap pakai lebih cepat; kalau untuk pembalutan melingkar pada tungkai atau lengan, roll gauze lebih tepat.
+Pilih lembaran saat kebutuhannya beragam dan sulit diprediksi — satu kotak lembaran bisa menutup banyak jenis perawatan. Kalau tindakannya berulang dan seragam (misalnya luka yang sama tiap hari), bentuk lipat yang siap pakai lebih cepat; kalau untuk pembalutan melingkar pada tungkai atau lengan, roll gauze lebih tepat.
 
 ## Cara memesan
 
