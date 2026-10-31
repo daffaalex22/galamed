@@ -33,15 +33,15 @@ const related = (await getCollection('products'))
   .sort((a, b) => a.id.localeCompare(b.id))
   .map((e) => ({ ...e.data, slug: slugOf(e.id) }));
 
-const title = `${product.name} — Distributor & Penawaran Resmi | Galamed`;
-const description = `${product.short} Distributor resmi ber-IDAK & Sertifikat CDAKB untuk rumah sakit, klinik, apotek, dan distributor. Ukuran & kemasan menyesuaikan pesanan — minta penawaran via WhatsApp.`;
+const title = `${product.name}: Distributor & Penawaran Resmi | Galamed`;
+const description = `${product.short} Distributor resmi ber-IDAK & Sertifikat CDAKB untuk rumah sakit, klinik, apotek, dan distributor. Ukuran & kemasan menyesuaikan pesanan. Minta penawaran via WhatsApp.`;
 
 // FAQ is shown as visible content; FAQPage schema is added only after the
 // client verifies the answers (wrong medical claims are worse than none).
 const faq = [
   {
     q: `Berapa minimal pesanan untuk ${product.name}?`,
-    a: 'Pesanan fleksibel sesuai kebutuhan fasilitas Anda. Untuk skala rumah sakit maupun distributor, konsultasikan jumlah dan kemasannya langsung via WhatsApp — penawaran resmi dikirim pada jam kerja.',
+    a: 'Pesanan fleksibel sesuai kebutuhan fasilitas Anda. Untuk skala rumah sakit maupun distributor, konsultasikan jumlah dan kemasannya langsung via WhatsApp. Penawaran resmi dikirim pada jam kerja.',
   },
   {
     q: `Apakah ${product.name} bisa dibuat dengan ukuran atau kemasan khusus?`,
@@ -49,7 +49,7 @@ const faq = [
   },
   {
     q: 'Apakah Galamed memiliki izin distribusi resmi?',
-    a: `Ya. Kami merek distribusi dari ${site.company}, pemegang Izin Distribusi Alat Kesehatan (IDAK) dan Sertifikat CDAKB — nomor izin tercantum dan bisa diverifikasi di halaman beranda.`,
+    a: `Ya. Kami merek distribusi dari ${site.company}, pemegang Izin Distribusi Alat Kesehatan (IDAK) dan Sertifikat CDAKB. Nomor izin tercantum dan bisa diverifikasi di halaman beranda.`,
   },
 ];
 
