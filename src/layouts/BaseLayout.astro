@@ -132,7 +132,13 @@ const structuredData = {
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="/legacy/logo-mark.png" />
+    <!-- Favicon set at permanent root URLs. Google reads the favicon only from
+         the home page's <head> and caches it per hostname (galamed.id's home
+         page), and many crawlers fetch /favicon.ico even without a link tag —
+         so regenerate files instead of renaming (npm run favicons). -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   </head>
   <body class="bg-white text-slate-900 antialiased">
     <Navbar brand={site.brand} waLink={site.waLink} />

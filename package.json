@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "cms": "decap-server",
     "images": "node scripts/optimize-images.mjs",
+    "favicons": "node scripts/generate-favicons.mjs",
     "lint:content": "node scripts/scan-mojibake.mjs"
   },
   "dependencies": {
