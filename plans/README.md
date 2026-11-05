@@ -15,6 +15,7 @@ must stop rather than improvise.
 | 005 | [Standardize `:active` press feedback on button-shaped controls](005-active-press-feedback.md) | MEDIUM | DONE |
 | 006 | [Acknowledge the quote-form submit before WhatsApp opens](006-quote-submit-feedback.md) | MEDIUM | DONE |
 | 007 | [Let the WhatsApp float arrive, not materialize](007-wa-float-entrance.md) | LOW | DONE |
+| 008 | [Parse-safe the FAQ accordion transitions (double-shorthand)](008-faq-shorthand-hardening.md) | LOW | DONE |
 
 ## Recommended execution order
 
