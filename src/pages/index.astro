@@ -272,7 +272,7 @@ const faqPageSchema = {
         </div>
         <div class="divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white shadow-sm">
           {faq.map((item) => (
-            <details class="group px-5">
+            <details class="faq-accordion group px-5">
               <summary class="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold text-navy-800 transition-colors [&::-webkit-details-marker]:hidden hover:text-brand-700">
                 {item.q}
                 <svg class="h-4 w-4 shrink-0 text-brand-700 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -296,6 +296,7 @@ const faqPageSchema = {
   const search = document.getElementById('product-search');
   const buttons = [...document.querySelectorAll('#product-filters button')];
   const cards = [...document.querySelectorAll('#product-grid > div')];
+  const grid = document.getElementById('product-grid');
   const count = document.getElementById('product-count');
   const empty = document.getElementById('product-empty');
   let activeCat = 'Semua';
@@ -316,6 +317,7 @@ const faqPageSchema = {
 
   buttons.forEach((b) =>
     b.addEventListener('click', () => {
+      grid?.classList.add('is-filtering');
       activeCat = b.dataset.cat ?? 'Semua';
       buttons.forEach((x) => {
         const on = x === b;
@@ -324,6 +326,9 @@ const faqPageSchema = {
       apply();
     })
   );
-  search?.addEventListener('input', apply);
+  search?.addEventListener('input', () => {
+    grid?.classList.add('is-filtering');
+    apply();
+  });
   apply();
 </script>

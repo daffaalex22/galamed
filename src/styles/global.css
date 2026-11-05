@@ -43,6 +43,9 @@
 
   --color-ink-900: #0f172a;
   --color-ink-600: #475569;
+
+  /* Motion: strong ease-out for UI state changes (opens, reveals). */
+  --ease-ui: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 html {
@@ -68,6 +71,63 @@ h3 {
 
 button:not(:disabled) {
   cursor: pointer;
+}
+
+/* ============================================================
+   FAQ accordion (used by <details class="faq-accordion"> in
+   src/pages/index.astro). Progressive enhancement: browsers
+   without ::details-content / interpolate-size keep the
+   current instant open/close.
+   ============================================================ */
+:root {
+  /* Lets `height: auto` participate in transitions. */
+  interpolate-size: allow-keywords;
+}
+
+.faq-accordion::details-content {
+  height: 0;
+  opacity: 0;
+  overflow: clip;
+  /* Closing (state removed → this rule applies). Shorter than opening. */
+  transition:
+    height 200ms var(--ease-ui),
+    opacity 200ms var(--ease-ui),
+    content-visibility 200ms allow-discrete;
+}
+
+.faq-accordion[open]::details-content {
+  height: auto;
+  opacity: 1;
+  /* Opening. Reveals get a longer beat than collapses. */
+  transition:
+    height 250ms var(--ease-ui),
+    opacity 250ms var(--ease-ui),
+    content-visibility 250ms allow-discrete;
+}
+
+/* ============================================================
+   Product filter/search bridge (used by #product-grid and
+   #product-empty in src/pages/index.astro). Replay relies on
+   display:none: an element not rendered does not run
+   animations, so restoring the render tree replays product-in
+   with no JS restart logic.
+   ============================================================ */
+@keyframes product-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
+/* Gated behind .is-filtering so the initial page render stays instant. */
+#product-grid.is-filtering > div {
+  animation: product-in 180ms var(--ease-ui);
+}
+
+/* The empty state starts display:none (class "hidden"), so it can only
+   ever enter during a filter/search interaction — no gate needed. */
+#product-empty:not(.hidden) {
+  animation: product-in 180ms var(--ease-ui);
 }
 
 :focus-visible {
