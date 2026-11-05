@@ -80,8 +80,13 @@ import { site } from '../data/site';
 
 <script define:vars={{ waNumber: site.waNumber }}>
   const form = document.getElementById('quote-form');
+  const btn = form?.querySelector('button[type="submit"]');
+  const originalLabel = btn ? btn.innerHTML : '';
+  let busy = false;
+
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (busy) return;
     const data = new FormData(form);
     const lines = [
       `Halo Galamed, saya ${data.get('name')}${data.get('jabatan') ? `, ${data.get('jabatan')}` : ''}.`,
@@ -92,6 +97,19 @@ import { site } from '../data/site';
       `${data.get('need')}`,
     ];
     const msg = lines.join('\n');
-    window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+    const win = window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+
+    if (btn && win) {
+      // Honest feedback only: show the opening state when WhatsApp ACTUALLY
+      // opened. Blocked popups stay silent (same as before).
+      busy = true;
+      btn.disabled = true;
+      btn.innerHTML = 'Membuka WhatsApp…';
+      setTimeout(() => {
+        busy = false;
+        btn.disabled = false;
+        btn.innerHTML = originalLabel;
+      }, 2500);
+    }
   });
 </script>
