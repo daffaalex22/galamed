@@ -88,7 +88,15 @@ button:not(:disabled) {
   height: 0;
   opacity: 0;
   overflow: clip;
-  /* Closing (state removed → this rule applies). Shorter than opening. */
+  /* Closing (state removed → this rule applies). Shorter than opening.
+     Two shorthands: the first parses everywhere (no exotic keyword); the
+     second re-declares with allow-discrete and is discarded WHOLE by
+     engines that don't parse the keyword in shorthand — the all-or-nothing
+     rule there only costs the duplicate, not the feature. */
+  transition:
+    height 200ms var(--ease-ui),
+    opacity 200ms var(--ease-ui),
+    content-visibility 200ms;
   transition:
     height 200ms var(--ease-ui),
     opacity 200ms var(--ease-ui),
@@ -98,7 +106,12 @@ button:not(:disabled) {
 .faq-accordion[open]::details-content {
   height: auto;
   opacity: 1;
-  /* Opening. Reveals get a longer beat than collapses. */
+  /* Opening. Reveals get a longer beat than collapses. Same two-shorthand
+     pattern as the closed state. */
+  transition:
+    height 250ms var(--ease-ui),
+    opacity 250ms var(--ease-ui),
+    content-visibility 250ms;
   transition:
     height 250ms var(--ease-ui),
     opacity 250ms var(--ease-ui),
