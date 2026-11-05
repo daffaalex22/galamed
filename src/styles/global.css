@@ -153,6 +153,25 @@ button:not(:disabled) {
   transform: none;
 }
 
+/* ============================================================
+   WhatsApp float entrance (the anchor in src/components/
+   WhatsAppFloat.astro via BaseLayout). Once per page load:
+   rises 28% of its own height while fading in, after a 600ms
+   beat so it arrives after the page settles. animation-delay is
+   intentionally NOT reset for reduced motion here — the global
+   reduced-motion block now zeroes animation-delay too, see below.
+   ============================================================ */
+@keyframes wa-float-in {
+  from {
+    opacity: 0;
+    transform: translateY(28%) scale(0.9);
+  }
+}
+
+.wa-float {
+  animation: wa-float-in 400ms var(--ease-ui) 600ms backwards;
+}
+
 :focus-visible {
   outline: 3px solid var(--color-brand-500);
   outline-offset: 2px;
@@ -168,5 +187,9 @@ button:not(:disabled) {
   *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+    /* Delay zeroed too: a waiting animation (e.g. the WhatsApp float
+       entrance) must not hold content invisible for its delay under
+       reduced motion. */
+    animation-delay: 0s !important;
   }
 }
