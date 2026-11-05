@@ -14,6 +14,7 @@ must stop rather than improvise.
 | 004 | [Harden the mobile menu entrance (JS-sequenced)](004-mobile-menu-hardening.md) | MEDIUM | DONE — fixes 003's entrance gap |
 | 005 | [Standardize `:active` press feedback on button-shaped controls](005-active-press-feedback.md) | MEDIUM | DONE |
 | 006 | [Acknowledge the quote-form submit before WhatsApp opens](006-quote-submit-feedback.md) | MEDIUM | DONE |
+| 007 | [Let the WhatsApp float arrive, not materialize](007-wa-float-entrance.md) | LOW | DONE |
 
 ## Recommended execution order
 
@@ -24,9 +25,9 @@ must stop rather than improvise.
 4. **004** — mobile menu hardening. DONE.
 5. **005** — press feedback standardization. DONE.
 6. **006** — quote-form submit feedback. DONE.
-7. Remaining queue: ⑥ WhatsApp float entrance (the last sweep item; motion
-   side only — 005 already gave the float its press state), plus the
-   proposed 001 shorthand hardening below.
+7. **007** — WhatsApp float entrance. The sweep's last item; depends on the
+   reduced-motion clamp extension it also contributes (one `animation-delay`
+   line).
 
 ## Notes
 
@@ -34,8 +35,8 @@ must stop rather than improvise.
   **done (001)**, ② product filter/search entrance bridge — **done (002)**,
   ③ mobile menu entrance — **done (003, hardened by 004)**, ④ standardized
   `:active` press feedback across CTAs — **done (005)**, ⑤ quote-form
-  submit feedback — **done (006)**, ⑥ WhatsApp float entrance (motion
-  side; 005 already gives the float its press state). Proposed follow-up:
+  submit feedback — **done (006)**, ⑥ WhatsApp float entrance — **done
+  (007)**. Provided follow-up:
   rewrite plan 001's two `content-visibility … allow-discrete` shorthand
   entries to the longhand pattern per the shorthand-parsing risk found
   auditing 004.
