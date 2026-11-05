@@ -130,6 +130,29 @@ button:not(:disabled) {
   animation: product-in 180ms var(--ease-ui);
 }
 
+/* ============================================================
+   Mobile navbar menu (used by #mobile-menu in
+   src/components/Navbar.astro). Open/close is JS-sequenced:
+   the script removes `hidden` and adds `.menu-open` in the
+   same style-flush for opening, and re-adds `hidden` after the
+   transition for closing (timer in the script). Motion is
+   opacity + translate, 200ms, var(--ease-ui). Deliberately no
+   @starting-style / allow-discrete: works in every engine with
+   CSS transitions.
+   ============================================================ */
+#mobile-menu {
+  opacity: 0;
+  transform: translateY(-0.5rem);
+  transition-property: opacity, transform;
+  transition-duration: 200ms;
+  transition-timing-function: var(--ease-ui);
+}
+
+#mobile-menu.menu-open {
+  opacity: 1;
+  transform: none;
+}
+
 :focus-visible {
   outline: 3px solid var(--color-brand-500);
   outline-offset: 2px;

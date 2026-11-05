@@ -52,15 +52,34 @@ const { brand, waLink } = Astro.props;
 <script>
   const btn = document.getElementById('nav-toggle');
   const menu = document.getElementById('mobile-menu');
-  btn?.addEventListener('click', () => {
-    const open = menu?.classList.toggle('hidden') === false;
-    btn.setAttribute('aria-expanded', String(!!open));
-    btn.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
-  });
+  let closeTimer;
+
+  function setMenu(open) {
+    if (!menu) return;
+    clearTimeout(closeTimer);
+    if (open) {
+      // Flush pending styles so the closed state is committed as the
+      // transition start, then reveal — the transition runs in one frame.
+      menu.classList.remove('hidden');
+      void menu.offsetHeight;
+      menu.classList.add('menu-open');
+    } else {
+      menu.classList.remove('menu-open');
+      // Reapply display:none only after the 200ms close transition ends.
+      closeTimer = setTimeout(() => menu.classList.add('hidden'), 220);
+    }
+  }
+
+  btn?.addEventListener('click', () => setMenu(!menu.classList.contains('menu-open')));
+
   menu?.querySelectorAll('a').forEach((a) =>
     a.addEventListener('click', () => {
+      // Link navigation scrolls the page instantly — close without a beat.
+      clearTimeout(closeTimer);
       menu.classList.add('hidden');
+      menu.classList.remove('menu-open');
       btn?.setAttribute('aria-expanded', 'false');
+      btn?.setAttribute('aria-label', 'Buka menu');
     })
   );
 </script>
