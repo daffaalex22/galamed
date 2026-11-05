@@ -22,14 +22,14 @@ const { brand, waLink } = Astro.props;
         href={waLink}
         target="_blank"
         rel="noopener"
-        class="inline-flex min-h-[44px] shrink-0 items-center whitespace-nowrap rounded-lg bg-brand-700 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-md active:translate-y-0 sm:px-4"
+        class="inline-flex min-h-[44px] shrink-0 items-center whitespace-nowrap rounded-lg bg-brand-700 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-md active:scale-[0.98] sm:px-4"
       >
         <span class="sm:hidden">Penawaran</span>
         <span class="hidden sm:inline">Minta penawaran</span>
       </a>
       <button
         id="nav-toggle"
-        class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-slate-200 text-navy-800 lg:hidden"
+        class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-slate-200 text-navy-800 transition active:scale-[0.98] lg:hidden"
         aria-expanded="false"
         aria-controls="mobile-menu"
         aria-label="Buka menu"
